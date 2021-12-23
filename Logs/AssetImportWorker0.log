@@ -645,3 +645,1002 @@ System memory in use after: 88.2 MB.
 Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2446.
 Total: 4.631300 ms (FindLiveObjects: 0.221800 ms CreateObjectMapping: 0.070700 ms MarkObjects: 4.316000 ms  DeleteObjects: 0.022000 ms)
 
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002720 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.754 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1974 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.1 MB.
+System memory in use after: 88.2 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2450.
+Total: 5.267300 ms (FindLiveObjects: 0.255500 ms CreateObjectMapping: 0.083500 ms MarkObjects: 4.888900 ms  DeleteObjects: 0.037800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 614.908780 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e3f2fc2c75f481d849910fd52cf8232') in 0.017024 seconds
+  Import took 0.020374 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 71.651411 seconds.
+  path: Assets/Resources 1
+  artifactKey: Guid(3fcfed95f71211b449239be999696acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources 1 using Guid(3fcfed95f71211b449239be999696acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6f316695cf3f7f4285b28042af8a272') in 0.005938 seconds
+  Import took 0.009131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000527 seconds.
+  path: Assets/Resources 1
+  artifactKey: Guid(3fcfed95f71211b449239be999696acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources 1 using Guid(3fcfed95f71211b449239be999696acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6f316695cf3f7f4285b28042af8a272') in 0.001862 seconds
+  Import took 0.004760 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.433531 seconds.
+  path: Assets/Resources
+  artifactKey: Guid(3461d7e959891ab41976c73597b6308f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources using Guid(3461d7e959891ab41976c73597b6308f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30666daa6c1e6909354a8c0dc6e6242d') in 0.006329 seconds
+  Import took 0.009430 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 167.659775 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ef2266cf1cb3b9f1b05af822e3f2114') in 0.074375 seconds
+  Import took 0.078755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.055453 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a6de7b9cbe482ea2d209909069126b') in 0.026214 seconds
+  Import took 0.030276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 155.603129 seconds.
+  path: Assets/Scripts/server/PlayersSpawner.cs
+  artifactKey: Guid(048d4f7b42f106c459e63237155f6f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/server/PlayersSpawner.cs using Guid(048d4f7b42f106c459e63237155f6f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a145e4883dca6d0d0a4f2071cd665cec') in 0.005669 seconds
+  Import took 0.009992 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002606 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.845 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2456.
+Total: 5.419800 ms (FindLiveObjects: 0.260000 ms CreateObjectMapping: 0.093600 ms MarkObjects: 5.041200 ms  DeleteObjects: 0.024000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003011 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.867 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2460.
+Total: 5.022300 ms (FindLiveObjects: 0.231000 ms CreateObjectMapping: 0.084800 ms MarkObjects: 4.681700 ms  DeleteObjects: 0.023900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 618.875052 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32bbe84adba5c283872e1ab0fba0f887') in 0.012615 seconds
+  Import took 0.015946 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002980 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.895 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2464.
+Total: 4.412400 ms (FindLiveObjects: 0.185800 ms CreateObjectMapping: 0.070500 ms MarkObjects: 4.133600 ms  DeleteObjects: 0.021900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003844 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.789 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2468.
+Total: 4.692800 ms (FindLiveObjects: 0.261400 ms CreateObjectMapping: 0.092900 ms MarkObjects: 4.310300 ms  DeleteObjects: 0.026700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002715 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.803 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2472.
+Total: 5.714100 ms (FindLiveObjects: 0.287000 ms CreateObjectMapping: 0.107100 ms MarkObjects: 5.288900 ms  DeleteObjects: 0.029700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002843 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.786 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2476.
+Total: 4.886700 ms (FindLiveObjects: 0.295600 ms CreateObjectMapping: 0.086700 ms MarkObjects: 4.480800 ms  DeleteObjects: 0.022300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002595 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.897 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.3 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2480.
+Total: 5.402300 ms (FindLiveObjects: 0.339100 ms CreateObjectMapping: 0.158200 ms MarkObjects: 4.877800 ms  DeleteObjects: 0.026100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 402.439963 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87869e3376878fc09e661597380d9e5e') in 0.086348 seconds
+  Import took 0.090482 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.149441 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c037add7c9901759338081d64240bb66') in 0.026548 seconds
+  Import took 0.030568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.418907 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bdf9758709ab47b5e1c01e1b3ada550') in 0.025887 seconds
+  Import took 0.029663 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017172 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bdf9758709ab47b5e1c01e1b3ada550') in 0.021520 seconds
+  Import took 0.025158 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 52.5 MB.
+System memory in use after: 52.6 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2481.
+Total: 4.941400 ms (FindLiveObjects: 0.243000 ms CreateObjectMapping: 0.078300 ms MarkObjects: 4.569300 ms  DeleteObjects: 0.049200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003245 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.043 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 5.145700 ms (FindLiveObjects: 0.253600 ms CreateObjectMapping: 0.104500 ms MarkObjects: 4.757300 ms  DeleteObjects: 0.028900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 9.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.1 MB.
+System memory in use after: 50.2 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 5.375600 ms (FindLiveObjects: 0.354300 ms CreateObjectMapping: 0.113900 ms MarkObjects: 4.864300 ms  DeleteObjects: 0.040900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007605 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.791 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.2 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2489.
+Total: 4.818200 ms (FindLiveObjects: 0.269000 ms CreateObjectMapping: 0.104200 ms MarkObjects: 4.383400 ms  DeleteObjects: 0.060600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 482.020510 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '416f8de187b26c512c2f477492abd3f6') in 0.080483 seconds
+  Import took 0.084420 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003015 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.682 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2494.
+Total: 5.310000 ms (FindLiveObjects: 0.385100 ms CreateObjectMapping: 0.176600 ms MarkObjects: 4.707800 ms  DeleteObjects: 0.038900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.1 MB.
+System memory in use after: 50.2 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2494.
+Total: 5.366100 ms (FindLiveObjects: 0.300700 ms CreateObjectMapping: 0.138100 ms MarkObjects: 4.905300 ms  DeleteObjects: 0.021200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003110 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.066 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2498.
+Total: 5.894600 ms (FindLiveObjects: 0.579500 ms CreateObjectMapping: 0.205100 ms MarkObjects: 5.078600 ms  DeleteObjects: 0.029500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002708 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.825 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2502.
+Total: 4.326100 ms (FindLiveObjects: 0.199800 ms CreateObjectMapping: 0.075100 ms MarkObjects: 4.027300 ms  DeleteObjects: 0.022700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 7.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.1 MB.
+System memory in use after: 50.2 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2502.
+Total: 4.994600 ms (FindLiveObjects: 0.302500 ms CreateObjectMapping: 0.128300 ms MarkObjects: 4.504100 ms  DeleteObjects: 0.058000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005135 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.194 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.06 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2506.
+Total: 7.006000 ms (FindLiveObjects: 0.396200 ms CreateObjectMapping: 0.300600 ms MarkObjects: 6.277200 ms  DeleteObjects: 0.030300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 9.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.1 MB.
+System memory in use after: 50.2 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2506.
+Total: 4.596100 ms (FindLiveObjects: 0.258500 ms CreateObjectMapping: 0.051900 ms MarkObjects: 4.244200 ms  DeleteObjects: 0.021100 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003246 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.075 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2510.
+Total: 8.949400 ms (FindLiveObjects: 0.379400 ms CreateObjectMapping: 0.184600 ms MarkObjects: 8.343300 ms  DeleteObjects: 0.040200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002553 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.853 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2514.
+Total: 4.803400 ms (FindLiveObjects: 0.205500 ms CreateObjectMapping: 0.074600 ms MarkObjects: 4.487300 ms  DeleteObjects: 0.035200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1061.914071 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba00196de01a2bf0adac4cdc5e542c6f') in 0.016116 seconds
+  Import took 0.019684 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.30 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.2 MB.
+System memory in use after: 50.3 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2514.
+Total: 5.467600 ms (FindLiveObjects: 0.235700 ms CreateObjectMapping: 0.096300 ms MarkObjects: 5.076700 ms  DeleteObjects: 0.057500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003238 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.917 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.4 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2518.
+Total: 8.125200 ms (FindLiveObjects: 1.381500 ms CreateObjectMapping: 0.184200 ms MarkObjects: 6.493200 ms  DeleteObjects: 0.057700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003037 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.058 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2522.
+Total: 8.440600 ms (FindLiveObjects: 0.223500 ms CreateObjectMapping: 0.085100 ms MarkObjects: 8.098900 ms  DeleteObjects: 0.030600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 240.885015 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f8e9124e3e6b2aba9b43f8aefa06ba2') in 0.013561 seconds
+  Import took 0.016642 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.04 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.2 MB.
+System memory in use after: 50.3 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2522.
+Total: 6.388300 ms (FindLiveObjects: 0.265000 ms CreateObjectMapping: 0.088700 ms MarkObjects: 5.961200 ms  DeleteObjects: 0.071500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003438 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.941 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.14 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.3 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2526.
+Total: 5.620300 ms (FindLiveObjects: 0.272400 ms CreateObjectMapping: 0.099600 ms MarkObjects: 5.212200 ms  DeleteObjects: 0.034400 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002801 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.077 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2530.
+Total: 5.629600 ms (FindLiveObjects: 0.229300 ms CreateObjectMapping: 0.085600 ms MarkObjects: 5.252900 ms  DeleteObjects: 0.059300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.2 MB.
+System memory in use after: 50.3 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2530.
+Total: 4.818000 ms (FindLiveObjects: 0.202600 ms CreateObjectMapping: 0.058000 ms MarkObjects: 4.531700 ms  DeleteObjects: 0.024600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005041 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.058 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2534.
+Total: 6.099400 ms (FindLiveObjects: 0.281300 ms CreateObjectMapping: 0.167500 ms MarkObjects: 5.615100 ms  DeleteObjects: 0.033900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 478.685491 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd749c4e82491e699aa4a27ae01f46ef2') in 0.106248 seconds
+  Import took 0.110819 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003429 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.881 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2539.
+Total: 11.231400 ms (FindLiveObjects: 0.277400 ms CreateObjectMapping: 0.108000 ms MarkObjects: 10.797400 ms  DeleteObjects: 0.046400 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.11 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.2 MB.
+System memory in use after: 50.3 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2539.
+Total: 4.668000 ms (FindLiveObjects: 0.202800 ms CreateObjectMapping: 0.060700 ms MarkObjects: 4.382300 ms  DeleteObjects: 0.021100 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003326 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.019 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2543.
+Total: 8.300100 ms (FindLiveObjects: 2.245800 ms CreateObjectMapping: 0.349900 ms MarkObjects: 5.672500 ms  DeleteObjects: 0.029200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002656 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.904 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2547.
+Total: 5.088200 ms (FindLiveObjects: 0.442700 ms CreateObjectMapping: 0.136400 ms MarkObjects: 4.482300 ms  DeleteObjects: 0.025500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 401.694784 seconds.
+  path: Assets/Resources/Player.prefab
+  artifactKey: Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Player.prefab using Guid(50bef2c4265d56e4c8ff06c37b907e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dafebe9d19e57604cf55b1936deb1ff5') in 0.084156 seconds
+  Import took 0.087758 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.14 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.1 MB.
+System memory in use after: 51.3 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2548.
+Total: 4.752400 ms (FindLiveObjects: 0.257600 ms CreateObjectMapping: 0.073400 ms MarkObjects: 4.378600 ms  DeleteObjects: 0.041900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.003253 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.211 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2552.
+Total: 8.652900 ms (FindLiveObjects: 0.440800 ms CreateObjectMapping: 0.143300 ms MarkObjects: 8.029700 ms  DeleteObjects: 0.037600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 8.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 43 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 50.3 MB.
+System memory in use after: 50.4 MB.
+
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 2552.
+Total: 4.866500 ms (FindLiveObjects: 0.296700 ms CreateObjectMapping: 0.238900 ms MarkObjects: 4.267800 ms  DeleteObjects: 0.061700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002827 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.137 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.11 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1975 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.4 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 2556.
+Total: 5.788200 ms (FindLiveObjects: 0.270800 ms CreateObjectMapping: 0.112100 ms MarkObjects: 5.375700 ms  DeleteObjects: 0.028500 ms)
+
