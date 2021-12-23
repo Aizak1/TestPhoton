@@ -3,46 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour {
+    [SerializeField] private float _speed;
+    [SerializeField] private int _damage;
 
-    Player playerScript;
-    Vector2 targetPosition;
+    [SerializeField] private GameObject _effect;
 
-    public float speed;
-    public int damage;
+    private Vector2 _targetPosition;
 
-    public GameObject effect;
-
-    private void Start()
+    public void Init(Player player)
     {
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        targetPosition = playerScript.transform.position;
+        _targetPosition = player.transform.position;
     }
-
 
     private void Update()
     {
-         
-        if ((Vector2)transform.position == targetPosition)
+        if ((Vector2)transform.position == _targetPosition)
         {
-            Instantiate(effect, transform.position, Quaternion.identity);
+            Instantiate(_effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         } else {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
         }
-
-
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.tag == "Player")
+        var player = other.GetComponent<Player>();
+        if (player)
         {
-            playerScript.TakeDamage(damage);
+            player.TakeDamage(_damage);
             Destroy(gameObject);
         }
-
     }
-
 }

@@ -3,23 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthPickup : MonoBehaviour {
-
-    Player playerScript;
-    public int healAmount;
-
-    public GameObject effect;
-
-    private void Start()
-    {
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    }
+    [SerializeField] private int _healAmount;
+    [SerializeField] private GameObject _effect;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        var player = collision.GetComponent<Player>();
+        if (player)
         {
-            Instantiate(effect, transform.position, Quaternion.identity);
-            playerScript.Heal(healAmount);
+            Instantiate(_effect, transform.position, Quaternion.identity);
+            player.Heal(_healAmount);
             Destroy(gameObject);
         }
     }

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-
     public float speed;
 
     private Rigidbody2D rb;
@@ -16,7 +15,7 @@ public class Player : MonoBehaviour
 
     public int health;
 
-    public GameObject[] hearts;
+    public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
@@ -30,19 +29,19 @@ public class Player : MonoBehaviour
     public float startTimeBtwTrail;
     public Transform groundPos;
 
+    private Weapon _currentWeapon;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sceneTransitions = FindObjectOfType<SceneTransition>();
 
-
+        _currentWeapon = GetComponentInChildren<Weapon>();
     }
 
     private void Update()
     {
-
-
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveAmount = moveInput.normalized * speed;
         if (moveInput != Vector2.zero)
@@ -71,36 +70,33 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-       Instantiate(hurtSound, transform.position, Quaternion.identity);
+        Instantiate(hurtSound, transform.position, Quaternion.identity);
         health -= amount;
         UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             sceneTransitions.LoadScene("Lose");
         }
     }
 
     public void ChangeWeapon(Weapon weaponToEquip) {
-        Destroy(GameObject.FindGameObjectWithTag("Weapon"));
-        Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
+        Destroy(_currentWeapon.gameObject);
+        _currentWeapon = Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
     }
 
     void UpdateHealthUI(int currentHealth) {
 
         for (int i = 0; i < hearts.Length; i++)
         {
-
             if (i < currentHealth)
             {
-                hearts[i].GetComponent<Image>().sprite = fullHeart;
+                hearts[i].sprite = fullHeart;
             } else {
-                hearts[i].GetComponent<Image>().sprite = emptyHeart;
+                hearts[i].sprite = emptyHeart;
             }
-
         }
-
     }
 
     public void Heal(int healAmount) {
@@ -112,6 +108,4 @@ public class Player : MonoBehaviour
         }
         UpdateHealthUI(health);
     }
-
-
 }

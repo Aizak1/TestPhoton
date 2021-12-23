@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour {
 
@@ -11,83 +12,72 @@ public class WaveSpawner : MonoBehaviour {
         public float timeBetweenSpawns;
     }
 
-    public Wave[] waves;
-    public Transform[] spawnPoints;
-    public float timeBetweenWaves;
+    [SerializeField] private Wave[] _waves;
+    [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private float _timeBetweenWaves;
+    [SerializeField] private Boss _boss;
+    [SerializeField] private Transform bossSpawnPoint;
+    [SerializeField] private SceneTransition _sceneTransition;
+    [SerializeField] private Slider _healthBar;
+    [SerializeField] private Player _player;
 
-    private Wave currentWave;
-    private int currentWaveIndex;
-    private Transform player;
-
-    private bool spawningFinished;
-
-    public GameObject boss;
-    public Transform bossSpawnPoint;
-
-    public GameObject healthBar;
-
+    private Wave _currentWave;
+    private int _currentWaveIndex;
+    private int _enemiesOnWave;
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        StartCoroutine(CallNextWave(currentWaveIndex));
+        StartCoroutine(CallNextWave(_currentWaveIndex));
     }
 
     private void Update()
     {
-      
-            if (spawningFinished == true && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if (_enemiesOnWave == 0)
+        {
+            if (_currentWaveIndex + 1 < _waves.Length)
             {
-                spawningFinished = false;
-                if (currentWaveIndex + 1 < waves.Length)
-                {
-                    currentWaveIndex++;
-                   StartCoroutine(CallNextWave(currentWaveIndex));
-                }
-                else
-                {
-                Instantiate(boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
-                healthBar.SetActive(true);
-                }
-
+                _currentWaveIndex++;
+                StartCoroutine(CallNextWave(_currentWaveIndex));
             }
-
-
+            else
+            {
+                _enemiesOnWave = 1;
+                var boss = Instantiate(_boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
+                boss.Init(_healthBar, _sceneTransition, _player);
+                _healthBar.gameObject.SetActive(true);
+            }
+        }
     }
 
-    IEnumerator CallNextWave(int waveIndex) {
-        yield return new WaitForSeconds(timeBetweenWaves);
+    IEnumerator CallNextWave(int waveIndex)
+    {
+        _enemiesOnWave = _waves[waveIndex].count;
+        yield return new WaitForSeconds(_timeBetweenWaves);
         StartCoroutine(SpawnWave(waveIndex));
     }
 
     IEnumerator SpawnWave (int waveIndex) {
-        currentWave = waves[waveIndex];
+        _currentWave = _waves[waveIndex];
 
-        for (int i = 0; i < currentWave.count; i++)
+        for (int i = 0; i < _currentWave.count; i++)
         {
 
-            if (player == null)
+            if (_player == null)
             {
                 yield break;
             }
-            Enemy randomEnemy = currentWave.enemies[Random.Range(0, currentWave.enemies.Length)];
-            Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(randomEnemy, randomSpawnPoint.position, transform.rotation);
+            Enemy randomEnemy = _currentWave.enemies[Random.Range(0, _currentWave.enemies.Length)];
+            Transform randomSpawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+            var enemy = Instantiate(randomEnemy, randomSpawnPoint.position, transform.rotation);
+            enemy.Init(_player, DecreaseEnemyCountOnWave);
 
-            if (i == currentWave.count - 1)
-            {
-                spawningFinished = true;
-            }
-            else
-            {
-                spawningFinished = false;
-            }
-
-            yield return new WaitForSeconds(currentWave.timeBetweenSpawns);
+            yield return new WaitForSeconds(_currentWave.timeBetweenSpawns);
 
         }
-
-
     }
 
+    private void DecreaseEnemyCountOnWave()
+    {
+        _enemiesOnWave--;
+    }
 }

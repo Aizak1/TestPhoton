@@ -3102,7 +3102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525be119a718d40f8813761cb20a3386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
+  _waves:
   - enemies:
     - {fileID: 114939067491350760, guid: 82b1649d54f1b5d4fbadf8202a680d0a, type: 3}
     count: 5
@@ -3129,12 +3129,12 @@ MonoBehaviour:
     count: 10
     timeBetweenSpawns: 1
   - enemies:
+    - {fileID: 114939067491350760, guid: 82b1649d54f1b5d4fbadf8202a680d0a, type: 3}
     - {fileID: 114139940114050450, guid: fcf9430deeb1f4d56b5fa93461cce203, type: 3}
     - {fileID: 114733243448835644, guid: f63ea55d6a3e94c0b95d1a6fe79f06f4, type: 3}
-    - {fileID: 114939067491350760, guid: 82b1649d54f1b5d4fbadf8202a680d0a, type: 3}
     count: 12
     timeBetweenSpawns: 1
-  spawnPoints:
+  _spawnPoints:
   - {fileID: 257971934}
   - {fileID: 1202699582}
   - {fileID: 350340045}
@@ -3154,10 +3154,12 @@ MonoBehaviour:
   - {fileID: 1802242299}
   - {fileID: 847074534}
   - {fileID: 1911186580}
-  timeBetweenWaves: 3
-  boss: {fileID: 1183662599149140, guid: 5b78be53cbde4534e978cfdcee6ad098, type: 3}
+  _timeBetweenWaves: 3
+  _boss: {fileID: 114288779317360116, guid: 5b78be53cbde4534e978cfdcee6ad098, type: 3}
   bossSpawnPoint: {fileID: 972070242}
-  healthBar: {fileID: 183223383}
+  _sceneTransition: {fileID: 1168947627}
+  _healthBar: {fileID: 183223384}
+  _player: {fileID: 2143019238}
 --- !u!4 &1286363190
 Transform:
   m_ObjectHideFlags: 0
@@ -4627,11 +4629,11 @@ MonoBehaviour:
   speed: 30
   health: 5
   hearts:
-  - {fileID: 852482038}
-  - {fileID: 1030900211}
-  - {fileID: 1558054061}
-  - {fileID: 148830571}
-  - {fileID: 1519872862}
+  - {fileID: 852482040}
+  - {fileID: 1030900213}
+  - {fileID: 1558054063}
+  - {fileID: 148830573}
+  - {fileID: 1519872864}
   fullHeart: {fileID: 21300000, guid: c8a59c02544e5d0478167e0cfb37b012, type: 3}
   emptyHeart: {fileID: 21300002, guid: c8a59c02544e5d0478167e0cfb37b012, type: 3}
   hurtAnim: {fileID: 1853182025}

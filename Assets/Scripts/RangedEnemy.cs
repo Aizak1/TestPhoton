@@ -4,57 +4,46 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy {
 
-    public float stopDistance;
-    public GameObject enemyBullet;
-    public Transform shotPoint;
+    [SerializeField] private float _stopDistance;
+    [SerializeField] private EnemyBullet _enemyBullet;
+    [SerializeField] private Transform _shotPoint;
+    [SerializeField] private Animator _animator;
 
-    float attackTime;
-    Animator anim;
-
-    public override void Start()
-    {
-        base.Start();
-        anim = GetComponent<Animator>();
-    }
+    private float _attackTime;
 
 
     private void Update()
     {
-        if (player != null)
+        if (!_player)
         {
+            return;
+        }
 
-            if (Vector2.Distance(transform.position, player.position) > stopDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            }
+        if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
+        }
 
-
-            if (Time.time >= attackTime)
-            {
-                attackTime = Time.time + timeBetweenAttacks;
-                anim.SetTrigger("attack");
-            }
-
-
+        if (Time.time >= _attackTime)
+        {
+            _attackTime = Time.time + _timeBetweenAttacks;
+            _animator.SetTrigger("attack");
         }
     }
 
 
     public void RangedAttack () {
 
-        if (player != null)
+        if (_player != null)
         {
 
-            Vector2 direction = player.position - shotPoint.position;
+            Vector2 direction = _player.transform.position - _shotPoint.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-            shotPoint.rotation = rotation;
+            _shotPoint.rotation = rotation;
 
-            Instantiate(enemyBullet, shotPoint.position, shotPoint.rotation);
-
+            var bullet = Instantiate(_enemyBullet, _shotPoint.position, _shotPoint.rotation);
+            bullet.Init(_player);
         }
-
     }
-
-
 }

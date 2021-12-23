@@ -44,15 +44,18 @@ public class Projectile : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-         if (other.tag == "Enemy")
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy)
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            enemy.TakeDamage(damage);
             DestroyProjectile();
+            return;
         }
 
-        if (other.tag == "boss")
+        var boss = other.GetComponent<Boss>();
+        if (boss)
         {
-            other.GetComponent<Boss>().TakeDamage(damage);
+            boss.TakeDamage(damage);
             DestroyProjectile();
         }
 

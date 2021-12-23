@@ -4,61 +4,62 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
+    [SerializeField] private int _health;
+    [SerializeField] private Enemy[] _enemies;
+    [SerializeField] private float _spawnOffset;
+    [SerializeField] private int _damage;
+    [SerializeField] private GameObject _blood;
+    [SerializeField] private GameObject _effect;
+    [SerializeField] private Animator _animator;
 
-    public int health;
-    public Enemy[] enemies;
-    public float spawnOffset;
+    private Player _player;
+    private int _halfHealth;
+    private Slider _healthBar;
+    private SceneTransition _sceneTransitions;
 
-    private int halfHealth;
-    private Animator anim;
+    private const string STAGE_2_TRIGGER = "stage2";
+    private const string WIN_SCENE = "Win";
 
-    public int damage;
-
-    public GameObject blood;
-    public GameObject effect;
-
-    private Slider healthBar;
-
-    private SceneTransition sceneTransitions;
-
-    private void Start()
+    public void Init(Slider healthBar, SceneTransition sceneTransition, Player player)
     {
-        halfHealth = health / 2;
-        anim = GetComponent<Animator>();
-        healthBar = FindObjectOfType<Slider>();
-        healthBar.maxValue = health;
-        healthBar.value = health;
-        sceneTransitions = FindObjectOfType<SceneTransition>();
+        _healthBar = healthBar;
+        _healthBar.maxValue = _health;
+        _healthBar.value = _health;
+        _halfHealth = _health / 2;
+        _sceneTransitions = sceneTransition;
+
+        _player = player;
     }
 
     public void TakeDamage(int amount)
     {
-        health -= amount;
-        healthBar.value = health;
-        if (health <= 0)
+        _health -= amount;
+        _healthBar.value = _health;
+        if (_health <= 0)
         {
-            Instantiate(effect, transform.position, Quaternion.identity);
-            Instantiate(blood, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            healthBar.gameObject.SetActive(false);
-            sceneTransitions.LoadScene("Win");
+            Instantiate(_effect, transform.position, Quaternion.identity);
+            Instantiate(_blood, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            _healthBar.gameObject.SetActive(false);
+            _sceneTransitions.LoadScene(WIN_SCENE);
         }
 
-        if (health <= halfHealth)
+        if (_health <= _halfHealth)
         {
-            anim.SetTrigger("stage2");
+            _animator.SetTrigger(STAGE_2_TRIGGER);
         }
 
-        Enemy randomEnemy = enemies[Random.Range(0, enemies.Length)];
-        Instantiate(randomEnemy, transform.position + new Vector3(spawnOffset, spawnOffset, 0), transform.rotation);
-
+        Enemy randomEnemy = _enemies[Random.Range(0, _enemies.Length)];
+        var enemy = Instantiate(randomEnemy, transform.position + new Vector3(_spawnOffset, _spawnOffset, 0), transform.rotation);
+        enemy.Init(_player, null);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        var player = collision.GetComponent<Player>();
+        if (player)
         {
-            collision.GetComponent<Player>().TakeDamage(damage);
+            player.TakeDamage(_damage);
         }
     }
 

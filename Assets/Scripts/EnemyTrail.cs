@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyTrail : MonoBehaviour {
 
-    public GameObject trail;
-    private float timeBtwSpawn;
-    public float startTimeBtwSpawn;
+    [SerializeField] private GameObject _trail;
+    [SerializeField] private float _startTimeBtwSpawn;
+    private float _timeBtwSpawn;
 
     private void Update()
     {
-        if (timeBtwSpawn <= 0) {
-            Instantiate(trail, transform.position, Quaternion.identity);
-            timeBtwSpawn = startTimeBtwSpawn;
+        if (_timeBtwSpawn <= 0) {
+            Instantiate(_trail, transform.position, Quaternion.identity);
+            _timeBtwSpawn = _startTimeBtwSpawn;
         } else
         {
-            timeBtwSpawn -= Time.deltaTime;
+            _timeBtwSpawn -= Time.deltaTime;
         }
     }
 }

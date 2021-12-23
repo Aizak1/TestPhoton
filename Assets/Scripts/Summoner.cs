@@ -4,92 +4,89 @@ using UnityEngine;
 
 public class Summoner : Enemy {
 
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    [SerializeField] private float _minX;
+    [SerializeField] private float _maxX;
+    [SerializeField] private float _minY;
+    [SerializeField] private float _maxY;
 
-    Vector2 targetPosition;
+    [SerializeField] private Animator _animator;
 
-    Animator anim;
+    [SerializeField] private float _stopDistance;
 
-    public float stopDistance;
+    private float _attackTime;
 
-    private float attackTime;
+    [SerializeField] private float _attackSpeed;
 
-    public float attackSpeed;
+    [SerializeField] private Enemy _enemyToSummon;
+    [SerializeField] private float _timeBetweenSummons;
 
-    public Enemy enemyToSummon;
-    public float timeBetweenSummons;
+    private Vector2 _targetPosition;
+    private float _summonTime;
 
-    private float summonTime;
-
-
-    public override void Start()
+    public void Start()
     {
-        base.Start();
-        float randomX = Random.Range(minX, maxX);
-        float randomY = Random.Range(minY, maxY);
-        targetPosition = new Vector2(randomX, randomY);
-        anim = GetComponent<Animator>();
+        float randomX = Random.Range(_minX, _maxX);
+        float randomY = Random.Range(_minY, _maxY);
+        _targetPosition = new Vector2(randomX, randomY);
     }
 
 
     private void Update()
     {
-        if(player != null) {
+        if (!_player)
+        {
+            return;
+        }
 
-            if ((Vector2)transform.position != targetPosition)
+        if ((Vector2)transform.position != _targetPosition)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+            _animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            _animator.SetBool("isRunning", false);
+
+            if (Time.time >= _summonTime)
             {
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-                anim.SetBool("isRunning", true);
-            } else {
-                anim.SetBool("isRunning", false);
-
-                if (Time.time >= summonTime)
-                {
-                    summonTime = Time.time + timeBetweenSummons;
-                    anim.SetTrigger("summon");
-                }
-
+                _summonTime = Time.time + _timeBetweenSummons;
+                _animator.SetTrigger("summon");
             }
 
-            if (Vector2.Distance(transform.position, player.position) <= stopDistance)
+        }
+
+        if (Vector2.Distance(transform.position, _player.transform.position) <= _stopDistance)
+        {
+            if (Time.time >= _attackTime)
             {
-                if (Time.time >= attackTime)
-                {
-                    attackTime = Time.time + timeBetweenAttacks;
-                    StartCoroutine(Attack());
-                }
+                _attackTime = Time.time + _timeBetweenAttacks;
+                StartCoroutine(Attack());
             }
-
-
-
         }
     }
 
 
     public void Summon() {
-        if (player != null)
+        if (_player != null)
         {
-            Instantiate(enemyToSummon, transform.position, transform.rotation);
+            var enemy = Instantiate(_enemyToSummon, transform.position, transform.rotation);
+            enemy.Init(_player, null);
         }
     }
 
 
     IEnumerator Attack()
     {
-
-        player.GetComponent<Player>().TakeDamage(damage);
+        _player.TakeDamage(_damage);
 
         Vector2 originalPosition = transform.position;
-        Vector2 targetPosition = player.position;
+        Vector2 targetPosition = _player.transform.position;
 
         float percent = 0f;
         while (percent <= 1)
         {
 
-            percent += Time.deltaTime * attackSpeed;
+            percent += Time.deltaTime * _attackSpeed;
             float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
             transform.position = Vector2.Lerp(originalPosition, targetPosition, interpolation);
             yield return null;

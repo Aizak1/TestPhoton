@@ -1,50 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour {
 
-    public int health;
-    [HideInInspector]
-    public Transform player;
+    [SerializeField] private int _health;
 
-    public float speed;
-    public float timeBetweenAttacks;
-    public int damage;
+    [SerializeField] protected float _speed;
+    [SerializeField] protected float _timeBetweenAttacks;
+    [SerializeField] protected int _damage;
 
-    public int pickupChance;
-    public GameObject[] pickups;
+    [SerializeField] private int _pickupChance;
+    [SerializeField] private Pickup[] _pickups;
 
-    public int healthPickupChance;
-    public GameObject healthPickup;
+    [SerializeField] private int _healthPickupChance;
+    [SerializeField] private HealthPickup _healthPickup;
 
-    public GameObject deathEffect;
+    [SerializeField] private GameObject _deathEffect;
 
-    public virtual void Start()
+    protected Player _player;
+    private UnityAction _onDeath;
+
+    public void Init(Player player, UnityAction onDeath)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = player;
+        _onDeath = onDeath;
     }
 
     public void TakeDamage (int amount) {
-        health -= amount;
-        if (health <= 0)
+        _health -= amount;
+        if (_health <= 0)
         {
+            _onDeath?.Invoke();
+
             int randomNumber = Random.Range(0, 101);
-            if (randomNumber < pickupChance)
+            if (randomNumber < _pickupChance)
             {
-                GameObject randomPickup = pickups[Random.Range(0, pickups.Length)];
+                var randomPickup = _pickups[Random.Range(0, _pickups.Length)];
                 Instantiate(randomPickup, transform.position, transform.rotation);
             }
 
             int randHealth = Random.Range(0, 101);
-            if (randHealth < healthPickupChance)
+            if (randHealth < _healthPickupChance)
             {
-                Instantiate(healthPickup, transform.position, transform.rotation);
+                Instantiate(_healthPickup, transform.position, transform.rotation);
             }
 
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            Instantiate(_deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
-	
 }
