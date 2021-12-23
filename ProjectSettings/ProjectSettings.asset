@@ -673,13 +673,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Analytics: 1
+    Analytics: 0
     Build: 0
     Collab: 0
     Game Performance: 0
     Purchasing: 0
     UDP: 0
-    UNet: 1
+    UNet: 0
     Unity Ads: 0
   luminIcon:
     m_Name: 
@@ -694,10 +694,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: b4441ce9-69a9-4faa-89b7-2e194280f3a5
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: UDEMYGameTutorial (1)
+  projectName: UDEMYGameTutorial
   organizationId: aizak1
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
