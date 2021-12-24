@@ -11,6 +11,7 @@ public class PlayersSpawner : MonoBehaviour
     [SerializeField] private Image[] _healthImages;
 
     [SerializeField] private CameraFollow _cameraFollow;
+    [SerializeField] private GameObject tempPickUpPrefab;
 
     private const int MIN_X = -60;
     private const int MAX_X = 60;
@@ -25,6 +26,10 @@ public class PlayersSpawner : MonoBehaviour
         var player = PhotonNetwork.Instantiate(_playerPrefab.name, _randomPosition, Quaternion.identity);
         player.GetComponent<Player>().Init(_healthImages,_healthAnimator);
         _cameraFollow.target = player.transform;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.InstantiateRoomObject(tempPickUpPrefab.name, new Vector2(Random.Range(MIN_X, MAX_X), Random.Range(MIN_Y, MAX_Y)), Quaternion.identity);
+        }
     }
 
 }

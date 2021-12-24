@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     private Weapon _currentWeapon;
     private PhotonView _photonView;
 
+
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -99,8 +101,9 @@ public class Player : MonoBehaviour
     }
 
     public void ChangeWeapon(Weapon weaponToEquip) {
-        Destroy(_currentWeapon.gameObject);
-        _currentWeapon = Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
+        PhotonNetwork.Destroy(_currentWeapon.gameObject);
+        var weapon = PhotonNetwork.Instantiate(weaponToEquip.gameObject.name, transform.position, transform.rotation);
+        _currentWeapon = weapon.GetComponent<Weapon>();
     }
 
     void UpdateHealthUI(int currentHealth) {
