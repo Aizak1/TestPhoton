@@ -193,7 +193,7 @@ MonoBehaviour:
   - {fileID: 1519872864}
   _cameraFollow: {fileID: 809913207}
   hardWeapon: {fileID: 1401558803114332, guid: 817b9267575bc7240b0b6454738d035c, type: 3}
-  quickWeapon: {fileID: 1190237112253662, guid: eb97c0d87a995864d89510bbf55a7a5a,
+  defaultWeapon: {fileID: 1934359494781152, guid: 786c59be893ce8146a9d9fa9d15b8df4,
     type: 3}
 --- !u!4 &9872988
 Transform:

@@ -20,11 +20,13 @@ public class Pickup : MonoBehaviour {
 
         PhotonNetwork.Instantiate(effect.name, transform.position, Quaternion.identity);
 
-        if (player.gameObject.GetPhotonView().IsMine)
+        var playerView = player.gameObject.GetPhotonView();
+
+        if (playerView.IsMine)
         {
              player.ChangeWeapon(weaponToEquip);
              int viewID = gameObject.GetPhotonView().ViewID;
-             player.gameObject.GetPhotonView().RPC("RPC_ForceMasterDestroy", RpcTarget.MasterClient,viewID);
+             player.gameObject.GetPhotonView().RPC("RPC_ForceMasterDestroy", gameObject.GetPhotonView().Owner,viewID);
 
         }
 
