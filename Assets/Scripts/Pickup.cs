@@ -18,14 +18,21 @@ public class Pickup : MonoBehaviour {
             return;
         }
 
-        Instantiate(effect, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(effect.name, transform.position, Quaternion.identity);
 
         if (player.gameObject.GetPhotonView().IsMine)
         {
-            player.ChangeWeapon(weaponToEquip);
-            PhotonNetwork.Destroy(gameObject);
+             player.ChangeWeapon(weaponToEquip);
+             int viewID = gameObject.GetPhotonView().ViewID;
+             player.gameObject.GetPhotonView().RPC("RPC_ForceMasterDestroy", RpcTarget.MasterClient,viewID);
+
         }
+
+
+
     }
+
+
 
 
 }

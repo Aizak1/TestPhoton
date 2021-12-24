@@ -101,9 +101,19 @@ public class Player : MonoBehaviour
     }
 
     public void ChangeWeapon(Weapon weaponToEquip) {
-        PhotonNetwork.Destroy(_currentWeapon.gameObject);
-        var weapon = PhotonNetwork.Instantiate(weaponToEquip.gameObject.name, transform.position, transform.rotation);
-        _currentWeapon = weapon.GetComponent<Weapon>();
+       var playerObj = PhotonView.Find(_photonView.ViewID).gameObject;
+        var pos = playerObj.transform.position;
+        var weapon = PhotonNetwork.Instantiate(weaponToEquip.name, pos, transform.rotation);
+        var weaponView = weapon.GetPhotonView();
+        int viewID = weaponView.ViewID;
+        if (_currentWeapon != null)
+        {
+            int oldviewID = _currentWeapon.gameObject.GetPhotonView().ViewID;
+
+            _photonView.RPC("RPC_UnlockParent", RpcTarget.All, oldviewID);
+            _photonView.RPC("RPC_ForceMasterDestroy", weaponView.Owner, oldviewID);
+        }
+        _photonView.RPC("RPC_SetCurrentWeapon", RpcTarget.All, _photonView.ViewID,viewID);
     }
 
     void UpdateHealthUI(int currentHealth) {
@@ -128,4 +138,39 @@ public class Player : MonoBehaviour
         }
         UpdateHealthUI(health);
     }
+
+    [PunRPC]
+    public void RPC_ForceMasterDestroy(int viewID)
+    {
+        var gameObject = PhotonView.Find(viewID).gameObject;
+        Debug.Log(gameObject.name);
+        PhotonNetwork.Destroy(gameObject);
+    }
+
+
+    [PunRPC]
+    public void RPC_UnlockParent(int viewID)
+    {
+        var gameObject = PhotonView.Find(viewID).gameObject;
+        gameObject.transform.parent = null;
+    }
+
+    [PunRPC]
+    public void RPC_SetCurrentWeapon(int playerViewId, int viewID)
+    {
+        var gameObject = PhotonView.Find(viewID).gameObject;
+        _currentWeapon = gameObject.GetComponent<Weapon>();
+        var playerObject = PhotonView.Find(playerViewId).gameObject;
+        _currentWeapon.transform.parent = playerObject.transform;
+        _currentWeapon.transform.localPosition = Vector3.zero;
+    }
+
+    [PunRPC]
+    public void RPC_ChangeOwner(int playerWeaponID, int weaponID)
+    {
+        var weaponObject = PhotonView.Find(weaponID).gameObject;
+        weaponObject.GetPhotonView().TransferOwnership(playerWeaponID);
+    }
+
+
 }

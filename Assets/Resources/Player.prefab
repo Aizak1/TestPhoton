@@ -999,6 +999,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1265527992542296, guid: 868250a161ec34cafa116a1f0c4d069f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265527992542296, guid: 868250a161ec34cafa116a1f0c4d069f, type: 3}
       propertyPath: m_TagString
       value: Weapon
       objectReference: {fileID: 0}
