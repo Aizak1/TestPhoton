@@ -37,7 +37,7 @@ public class Weapon : MonoBehaviour {
         {
             if (Time.time >= shotTime)
             {
-                Instantiate(projectile, shotPoint.position, transform.rotation);
+                PhotonNetwork.Instantiate(projectile.name, shotPoint.position, transform.rotation);
                 cameraAnim.SetTrigger("shake");
                 shotTime = Time.time + timeBetweenShots;
             }
