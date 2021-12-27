@@ -195,6 +195,8 @@ MonoBehaviour:
   hardWeapon: {fileID: 1401558803114332, guid: 817b9267575bc7240b0b6454738d035c, type: 3}
   defaultWeapon: {fileID: 1934359494781152, guid: 786c59be893ce8146a9d9fa9d15b8df4,
     type: 3}
+  _healPickUp: {fileID: 1140817993291220, guid: 99a308bc6d8d942edb43b020d4626e4e,
+    type: 3}
 --- !u!4 &9872988
 Transform:
   m_ObjectHideFlags: 0

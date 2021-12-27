@@ -46,6 +46,8 @@ MonoBehaviour:
   - RPC_ChangeWeapon
   - RPC_ChangeWeaponID
   - RPC_ChangeOwner
+  - RPC_Destroy
+  - RPC_Heal
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

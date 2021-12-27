@@ -111,9 +111,9 @@ public class Player : MonoBehaviour
             int oldviewID = _currentWeapon.gameObject.GetPhotonView().ViewID;
 
             _photonView.RPC("RPC_UnlockParent", RpcTarget.All, oldviewID);
-            _photonView.RPC("RPC_ForceMasterDestroy", weaponView.Owner, oldviewID);
+            _photonView.RPC("RPC_Destroy", weaponView.Owner, oldviewID);
         }
-        _photonView.RPC("RPC_SetCurrentWeapon", RpcTarget.All, _photonView.ViewID,viewID);
+        _photonView.RPC("RPC_SetCurrentWeapon", RpcTarget.AllBuffered, _photonView.ViewID,viewID);
     }
 
     void UpdateHealthUI(int currentHealth) {
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
     }
 
     [PunRPC]
-    public void RPC_ForceMasterDestroy(int viewID)
+    public void RPC_Destroy(int viewID)
     {
         var gameObject = PhotonView.Find(viewID).gameObject;
         Debug.Log(gameObject.name);
@@ -170,6 +170,14 @@ public class Player : MonoBehaviour
     {
         var weaponObject = PhotonView.Find(weaponID).gameObject;
         weaponObject.GetPhotonView().TransferOwnership(playerWeaponID);
+    }
+
+    [PunRPC]
+
+    public void RPC_Heal(int playerViewID,int healAmount)
+    {
+        var player = PhotonView.Find(playerViewID).GetComponent<Player>();
+        player.Heal(healAmount);
     }
 
 
