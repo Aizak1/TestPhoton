@@ -92,16 +92,23 @@ public class Player : MonoBehaviour
         rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
     }
 
+    [PunRPC]
     public void TakeDamage(int amount)
     {
         Instantiate(hurtSound, transform.position, Quaternion.identity);
+
+        if (!_photonView.IsMine)
+        {
+            _photonView.RPC("TakeDamage", _photonView.Owner, amount);
+            return;
+        }
+
+        hurtAnim.SetTrigger("hurt");
         health -= amount;
         UpdateHealthUI(health);
-        hurtAnim.SetTrigger("hurt");
         if (health <= 0)
         {
-            Destroy(gameObject);
-            sceneTransitions.LoadScene("Lose");
+            _photonView.RPC("RPC_GameOver", RpcTarget.All);
         }
     }
 
@@ -207,5 +214,10 @@ public class Player : MonoBehaviour
         PlayersSpawner.PlayersInSession.Remove(player);
     }
 
-
+    [PunRPC]
+    public void RPC_GameOver()
+    {
+        PhotonNetwork.LeaveRoom();
+        sceneTransitions.LoadScene("Lobby");
+    }
 }

@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  health: 4
+  health: 5
   hearts:
   - {fileID: 0}
   - {fileID: 0}

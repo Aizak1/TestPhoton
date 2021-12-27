@@ -21,11 +21,12 @@ public class PlayersSpawner : MonoBehaviour
 
     private Vector2 _randomPosition;
 
-    public static List<Player> PlayersInSession = new List<Player>();
+    public static List<Player> PlayersInSession;
     public int PlayersCount = 0;
 
     private void Start()
     {
+        PlayersInSession = new List<Player>();
         _randomPosition = new Vector2(Random.Range(MIN_X, MAX_X), Random.Range(MIN_Y, MAX_Y));
 
         var playerObject = PhotonNetwork.Instantiate(_playerPrefab.name, _randomPosition, Quaternion.identity);

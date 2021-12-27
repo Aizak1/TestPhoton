@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,23 +33,27 @@ public class Enemy : MonoBehaviour {
         _health -= amount;
         if (_health <= 0)
         {
-            _onDeath?.Invoke();
 
-            int randomNumber = Random.Range(0, 101);
-            if (randomNumber < _pickupChance)
+            if (PhotonNetwork.IsMasterClient)
             {
-                var randomPickup = _pickups[Random.Range(0, _pickups.Length)];
-                Instantiate(randomPickup, transform.position, transform.rotation);
-            }
+                PhotonNetwork.Instantiate(_deathEffect.name, transform.position, Quaternion.identity);
+                _onDeath?.Invoke();
 
-            int randHealth = Random.Range(0, 101);
-            if (randHealth < _healthPickupChance)
-            {
-                Instantiate(_healthPickup, transform.position, transform.rotation);
-            }
+                int randomNumber = Random.Range(0, 101);
+                if (randomNumber < _pickupChance)
+                {
+                    var randomPickup = _pickups[Random.Range(0, _pickups.Length)];
+                    PhotonNetwork.Instantiate(randomPickup.name, transform.position, transform.rotation);
+                }
 
-            Instantiate(_deathEffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+                int randHealth = Random.Range(0, 101);
+                if (randHealth < _healthPickupChance)
+                {
+                    PhotonNetwork.Instantiate(_healthPickup.name, transform.position, transform.rotation);
+                }
+
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 }
