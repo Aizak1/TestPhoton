@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class Player : MonoBehaviour
     private PhotonView _photonView;
 
 
-
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -43,6 +43,10 @@ public class Player : MonoBehaviour
         sceneTransitions = FindObjectOfType<SceneTransition>();
 
         _currentWeapon = GetComponentInChildren<Weapon>();
+        if (_photonView.IsMine)
+        {
+            _photonView.RPC("RPC_Add", RpcTarget.MasterClient, _photonView.ViewID);
+        }
     }
 
     public void Init(Image[] healthImages, Animator healthAnimator)
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
+
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveAmount = moveInput.normalized * speed;
         if (moveInput != Vector2.zero)
@@ -139,6 +144,16 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
     }
 
+    private void OnDestroy()
+    {
+        if (_photonView.IsMine)
+        {
+            _photonView.RPC("RPC_Remove", RpcTarget.MasterClient, _photonView.ViewID);
+        }
+    }
+
+
+
     [PunRPC]
     public void RPC_Destroy(int viewID)
     {
@@ -178,6 +193,19 @@ public class Player : MonoBehaviour
     {
         var player = PhotonView.Find(playerViewID).GetComponent<Player>();
         player.Heal(healAmount);
+    }
+    [PunRPC]
+    public void RPC_Add(int playerViewID)
+    {
+        var player = PhotonView.Find(playerViewID).GetComponent<Player>();
+        PlayersSpawner.PlayersInSession.Add(player);
+    }
+
+    [PunRPC]
+    public void RPC_Remove(int playerViewID)
+    {
+        var player = PhotonView.Find(playerViewID).GetComponent<Player>();
+        PlayersSpawner.PlayersInSession.Remove(player);
     }
 
 

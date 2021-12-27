@@ -21,17 +21,26 @@ public class PlayersSpawner : MonoBehaviour
 
     private Vector2 _randomPosition;
 
+    public int playersCount;
+
+    public static List<Player> PlayersInSession = new List<Player>();
+
     private void Start()
     {
         _randomPosition = new Vector2(Random.Range(MIN_X, MAX_X), Random.Range(MIN_Y, MAX_Y));
-        var player = PhotonNetwork.Instantiate(_playerPrefab.name, _randomPosition, Quaternion.identity);
-        player.GetComponent<Player>().Init(_healthImages,_healthAnimator);
-        _cameraFollow.target = player.transform;
-         PhotonNetwork.Instantiate(defaultWeapon.name, player.transform.position,Quaternion.identity);
-        if (PhotonNetwork.IsMasterClient)
-        {
-            PhotonNetwork.Instantiate(hardWeapon.name, new Vector2(Random.Range(MIN_X, MAX_X), Random.Range(MIN_Y, MAX_Y)), Quaternion.identity);
-        }
+
+        var playerObject = PhotonNetwork.Instantiate(_playerPrefab.name, _randomPosition, Quaternion.identity);
+        var player = playerObject.GetComponent<Player>();
+
+        player.Init(_healthImages,_healthAnimator);
+
+        _cameraFollow.target = playerObject.transform;
+         PhotonNetwork.Instantiate(defaultWeapon.name, playerObject.transform.position,Quaternion.identity);
+    }
+
+    public void AddPlayerInSession(Player player)
+    {
+        PlayersInSession.Add(player);
     }
 
 }
