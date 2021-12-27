@@ -169,8 +169,12 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void RPC_Destroy(int viewID)
     {
-        var gameObject = PhotonView.Find(viewID).gameObject;
-        PhotonNetwork.Destroy(gameObject);
+        PhotonView view = PhotonView.Find(viewID);
+        if(view != null)
+        {
+            PhotonNetwork.Destroy(view.gameObject);
+        }
+
     }
 
 
