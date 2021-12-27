@@ -10,12 +10,17 @@ public class EnemyBullet : MonoBehaviour {
 
     [SerializeField] private GameObject _effect;
 
-    private PhotonView _photonView;
 
     private void Start()
     {
-        _photonView = gameObject.GetPhotonView();
-        Invoke("DestroyProjectile", lifeTime);
+        if (!gameObject.GetPhotonView().IsMine)
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            Invoke("DestroyProjectile", lifeTime);
+        }
     }
 
     private void Update()
@@ -25,19 +30,12 @@ public class EnemyBullet : MonoBehaviour {
 
     void DestroyProjectile()
     {
-        if (_photonView.IsMine)
-        {
-            PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
-            PhotonNetwork.Destroy(gameObject);
-        }
+        PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
+        PhotonNetwork.Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_photonView.IsMine)
-        {
-            return;
-        }
 
         var player = other.GetComponent<Player>();
         if (player)
