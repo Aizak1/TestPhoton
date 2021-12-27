@@ -144,6 +144,15 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
     }
 
+    private void OnApplicationQuit()
+    {
+        if (_photonView.IsMine)
+        {
+            _photonView.RPC("RPC_Remove", RpcTarget.MasterClient, _photonView.ViewID);
+            PhotonNetwork.SendAllOutgoingCommands();
+        }
+    }
+
 
     [PunRPC]
     public void RPC_Destroy(int viewID)
@@ -194,9 +203,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void RPC_Remove(int playerViewID)
     {
-        Debug.Log("I am here");
         var player = PhotonView.Find(playerViewID).GetComponent<Player>();
-        Debug.Log(player.name);
         PlayersSpawner.PlayersInSession.Remove(player);
     }
 
