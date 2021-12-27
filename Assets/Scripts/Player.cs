@@ -57,6 +57,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!PhotonNetwork.InRoom)
+        {
+            return;
+        }
+
         if (!_photonView.IsMine)
         {
             return;

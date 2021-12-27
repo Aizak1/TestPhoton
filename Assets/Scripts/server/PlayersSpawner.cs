@@ -22,7 +22,6 @@ public class PlayersSpawner : MonoBehaviour
     private Vector2 _randomPosition;
 
     public static List<Player> PlayersInSession;
-    public int PlayersCount = 0;
 
     private void Start()
     {
@@ -42,11 +41,4 @@ public class PlayersSpawner : MonoBehaviour
     {
         PlayersInSession.Add(player);
     }
-
-    private void Update()
-    {
-        PlayersCount = PlayersInSession.Count;
-    }
-
-
 }

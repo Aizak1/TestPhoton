@@ -22,7 +22,7 @@ public class HealthPickup : MonoBehaviour {
 
         if (playerView.IsMine)
         {
-            playerView.RPC("RPC_Heal", RpcTarget.All, playerView.ViewID, _healAmount);
+            playerView.RPC("RPC_Heal", playerView.Owner, playerView.ViewID, _healAmount);
             var pickUpView = gameObject.GetPhotonView();
             int viewID = pickUpView.ViewID;
             player.gameObject.GetPhotonView().RPC("RPC_Destroy", pickUpView.Owner, viewID);

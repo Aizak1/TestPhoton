@@ -66,15 +66,15 @@ public class WaveSpawner : MonoBehaviour {
 
         for (int i = 0; i < _currentWave.count; i++)
         {
-
-            if (PlayersSpawner.PlayersInSession.Count == 0)
+            var randomPlayer = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
+            if (randomPlayer == null)
             {
                 yield break;
             }
             Enemy randomEnemy = _currentWave.enemies[Random.Range(0, _currentWave.enemies.Length)];
             Transform randomSpawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
             var enemy = PhotonNetwork.Instantiate(randomEnemy.name, randomSpawnPoint.position, transform.rotation);
-            enemy.GetComponent<Enemy>().Init(PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)], DecreaseEnemyCountOnWave);
+            enemy.GetComponent<Enemy>().Init(randomPlayer, DecreaseEnemyCountOnWave);
 
             yield return new WaitForSeconds(_currentWave.timeBetweenSpawns);
 

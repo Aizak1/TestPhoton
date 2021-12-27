@@ -1,39 +1,49 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour {
     [SerializeField] private float _speed;
     [SerializeField] private int _damage;
+    [SerializeField] private float lifeTime;
 
     [SerializeField] private GameObject _effect;
 
-    private Vector2 _targetPosition;
+    private PhotonView _photonView;
 
-    public void Init(Player player)
+    private void Start()
     {
-        _targetPosition = player.transform.position;
+        _photonView = gameObject.GetPhotonView();
+        Invoke("DestroyProjectile", lifeTime);
     }
 
     private void Update()
     {
-        if ((Vector2)transform.position == _targetPosition)
+        transform.Translate(Vector2.up * _speed * Time.deltaTime);
+    }
+
+    void DestroyProjectile()
+    {
+        if (_photonView.IsMine)
         {
-            Instantiate(_effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        } else {
-            transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+            PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!_photonView.IsMine)
+        {
+            return;
+        }
+
         var player = other.GetComponent<Player>();
         if (player)
         {
             player.TakeDamage(_damage);
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 }

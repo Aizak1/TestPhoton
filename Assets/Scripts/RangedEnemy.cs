@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,8 +43,7 @@ public class RangedEnemy : Enemy {
             Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             _shotPoint.rotation = rotation;
 
-            var bullet = Instantiate(_enemyBullet, _shotPoint.position, _shotPoint.rotation);
-            bullet.Init(_player);
+            PhotonNetwork.Instantiate(_enemyBullet.name, _shotPoint.position, _shotPoint.rotation);
         }
     }
 }

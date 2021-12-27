@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -69,8 +70,8 @@ public class Summoner : Enemy {
     public void Summon() {
         if (_player != null)
         {
-            var enemy = Instantiate(_enemyToSummon, transform.position, transform.rotation);
-            enemy.Init(_player, null);
+            var enemy = PhotonNetwork.Instantiate(_enemyToSummon.name, transform.position, transform.rotation);
+            enemy.GetComponent<Enemy>().Init(PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)], null);
         }
     }
 
