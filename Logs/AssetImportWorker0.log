@@ -110,3 +110,134 @@ Received Import Request.
 Start importing Assets/Scenes/Game.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b522edc887c8bb6094d16ec0775340e') in 0.008197 seconds
   Import took 0.010463 seconds .
 
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.002109 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.843 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1751 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 77.7 MB.
+System memory in use after: 77.8 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2194.
+Total: 4.373900 ms (FindLiveObjects: 0.254400 ms CreateObjectMapping: 0.090100 ms MarkObjects: 4.008400 ms  DeleteObjects: 0.019800 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007186 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.912 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.60 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1802 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 80.2 MB.
+System memory in use after: 80.3 MB.
+
+Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 2267.
+Total: 5.505600 ms (FindLiveObjects: 0.197800 ms CreateObjectMapping: 0.079600 ms MarkObjects: 5.146100 ms  DeleteObjects: 0.080500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006768 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.874 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1802 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 80.2 MB.
+System memory in use after: 80.3 MB.
+
+Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 2270.
+Total: 4.278700 ms (FindLiveObjects: 0.185400 ms CreateObjectMapping: 0.066200 ms MarkObjects: 3.995900 ms  DeleteObjects: 0.030200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007101 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.903 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1954 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.9 MB.
+System memory in use after: 85.3 MB.
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2413.
+Total: 5.281500 ms (FindLiveObjects: 0.195100 ms CreateObjectMapping: 0.084100 ms MarkObjects: 4.549800 ms  DeleteObjects: 0.451600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006977 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.874 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1953 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 86.8 MB.
+System memory in use after: 85.2 MB.
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 2416.
+Total: 4.945400 ms (FindLiveObjects: 0.180100 ms CreateObjectMapping: 0.073800 ms MarkObjects: 4.194300 ms  DeleteObjects: 0.496000 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
