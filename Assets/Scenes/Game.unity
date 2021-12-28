@@ -3616,6 +3616,7 @@ MonoBehaviour:
   _minY: -60
   _maxY: 60
   _player: {fileID: 4026306327931734473, guid: 62dc373e6af39844bbcf5ec1b4b4e279, type: 3}
+  _cameraFollow: {fileID: 809913207}
 --- !u!1 &1947882540
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Bolt;
 
-public class Player : MonoBehaviour
+public class Player : EntityBehaviour<ICustomPlayer>
 {
     public float speed;
 
@@ -15,13 +16,13 @@ public class Player : MonoBehaviour
 
     public int health;
 
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
+    //public Image[] hearts;
+    //public Sprite fullHeart;
+    //public Sprite emptyHeart;
 
-    public Animator hurtAnim;
+    //public Animator hurtAnim;
 
-    private SceneTransition sceneTransitions;
+    //private SceneTransition sceneTransitions;
     public GameObject hurtSound;
 
     public GameObject trail;
@@ -31,16 +32,18 @@ public class Player : MonoBehaviour
 
     private Weapon _currentWeapon;
 
-    private void Start()
+    public override void Attached()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        sceneTransitions = FindObjectOfType<SceneTransition>();
+        //sceneTransitions = FindObjectOfType<SceneTransition>();
 
         _currentWeapon = GetComponentInChildren<Weapon>();
+
+        state.SetTransforms(state.PlayerTransform, transform);
     }
 
-    private void Update()
+    public override void SimulateOwner()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveAmount = moveInput.normalized * speed;
@@ -58,14 +61,12 @@ public class Player : MonoBehaviour
             }
             anim.SetBool("isRunning", true);
         }
-        else {
+        else
+        {
             anim.SetBool("isRunning", false);
         }
-    }
 
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + moveAmount * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveAmount * BoltNetwork.FrameDeltaTime);
     }
 
     public void TakeDamage(int amount)
@@ -73,11 +74,11 @@ public class Player : MonoBehaviour
         Instantiate(hurtSound, transform.position, Quaternion.identity);
         health -= amount;
         UpdateHealthUI(health);
-        hurtAnim.SetTrigger("hurt");
+        //hurtAnim.SetTrigger("hurt");
         if (health <= 0)
         {
             Destroy(gameObject);
-            sceneTransitions.LoadScene("Lose");
+            //sceneTransitions.LoadScene("Lose");
         }
     }
 
@@ -88,15 +89,15 @@ public class Player : MonoBehaviour
 
     void UpdateHealthUI(int currentHealth) {
 
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (i < currentHealth)
-            {
-                hearts[i].sprite = fullHeart;
-            } else {
-                hearts[i].sprite = emptyHeart;
-            }
-        }
+        //for (int i = 0; i < hearts.Length; i++)
+        //{
+        //    if (i < currentHealth)
+        //    {
+        //        hearts[i].sprite = fullHeart;
+        //    } else {
+        //        hearts[i].sprite = emptyHeart;
+        //    }
+        //}
     }
 
     public void Heal(int healAmount) {
