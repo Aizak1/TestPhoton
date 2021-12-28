@@ -14,6 +14,7 @@ public class NetworkCallbacks : GlobalEventListener
 
     [SerializeField] Player _player;
     [SerializeField] CameraFollow _cameraFollow;
+    [SerializeField] Weapon _startWeapon;
 
 
     public override void SceneLoadLocalDone(string scene, IProtocolToken token)
@@ -24,6 +25,9 @@ public class NetworkCallbacks : GlobalEventListener
         var playerObject = BoltNetwork.Instantiate(_player.gameObject, new Vector2(x, y), Quaternion.identity);
         _cameraFollow.target = playerObject.transform;
         _cameraFollow.enabled = true;
+
+        var weapon = BoltNetwork.Instantiate(_startWeapon.gameObject, playerObject.transform.position, Quaternion.identity);
+        weapon.GetComponent<Weapon>().Init(playerObject.transform);
     }
 
 }

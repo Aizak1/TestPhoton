@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Bolt;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : EntityBehaviour<IProjectile> {
 
     public float speed;
     public float lifeTime;
@@ -16,30 +17,36 @@ public class Projectile : MonoBehaviour {
     private float timeBtwTrail;
     public float startTimeBtwTrail;
 
-    private void Start()
+    public override void Attached()
     {
-        Invoke("DestroyProjectile", lifeTime);
-        Instantiate(soundObject, transform.position, transform.rotation);
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        if (GetComponent<BoltEntity>().IsOwner)
+        {
+            Invoke("DestroyProjectile", lifeTime);
+            BoltNetwork.Instantiate(soundObject, transform.position, transform.rotation);
+            BoltNetwork.Instantiate(explosion, transform.position, Quaternion.identity);
+        }
+    }
+
+    public override void SimulateOwner()
+    {
     }
 
     private void Update()
     {
-
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
         if (timeBtwTrail <= 0) {
             Instantiate(trail, transform.position, Quaternion.identity);
             timeBtwTrail = startTimeBtwTrail;
-        } else
+        }
+        else
         {
             timeBtwTrail -= Time.deltaTime;
         }
-
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
-    void DestroyProjectile() {
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+    private void DestroyProjectile() {
+        BoltNetwork.Instantiate(explosion, transform.position, Quaternion.identity);
+        BoltNetwork.Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

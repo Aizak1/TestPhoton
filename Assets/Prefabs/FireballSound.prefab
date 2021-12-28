@@ -1,27 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1115425617642706}
-  m_IsPrefabAsset: 1
 --- !u!1 &1115425617642706
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4127760798185254}
   - component: {fileID: 82540992277438302}
   - component: {fileID: 114597229864232192}
   - component: {fileID: 114402437411096482}
+  - component: {fileID: -3545355997055510688}
   m_Layer: 0
   m_Name: FireballSound
   m_TagString: Untagged
@@ -31,9 +22,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4127760798185254
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115425617642706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -44,9 +36,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82540992277438302
 AudioSource:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115425617642706}
   m_Enabled: 1
   serializedVersion: 4
@@ -137,11 +130,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114597229864232192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115425617642706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537ac14d961d7446ba095e1f43f7d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 3
 --- !u!114 &114402437411096482
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115425617642706}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -152,15 +159,32 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2f4140afa7d801244b794cbc46d74d7b, type: 3}
   - {fileID: 8300000, guid: 3c1acd76e6efc9a42b73f5930fdd6154, type: 3}
   - {fileID: 8300000, guid: 5a5f0816b2d8d2f45af20ad0483cdfad, type: 3}
---- !u!114 &114597229864232192
+--- !u!114 &-3545355997055510688
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115425617642706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537ac14d961d7446ba095e1f43f7d998, type: 3}
+  m_Script: {fileID: 155943207, guid: 5b00bf8b25851d440940a40ec23344f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 3
+  _sceneGuid: 
+  _serializerGuid: 3f5ad297-8449-4ba4-9856-75a92be85c58
+  _prefabId: 1
+  _updateRate: 1
+  _autoFreezeProxyFrames: 0
+  _clientPredicted: 1
+  _allowInstantiateOnClient: 1
+  _persistThroughSceneLoads: 0
+  _sceneObjectDestroyOnDetach: 1
+  _sceneObjectAutoAttach: 1
+  _alwaysProxy: 0
+  _detachOnDisable: 1
+  _allowFirstReplicationWhenFrozen: 0
+  _autoRemoveChildEntities: 0
+  _entityBehaviourQueryOption: 0
+  _entityPriorityCalculatorQueryOption: 1
+  _entityReplicationFilterQueryOption: 1

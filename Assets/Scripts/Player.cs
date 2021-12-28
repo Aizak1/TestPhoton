@@ -54,7 +54,7 @@ public class Player : EntityBehaviour<ICustomPlayer>
 
             if (timeBtwTrail <= 0)
             {
-                Instantiate(trail, groundPos.position, Quaternion.identity);
+                BoltNetwork.Instantiate(trail, groundPos.position, Quaternion.identity);
                 timeBtwTrail = startTimeBtwTrail;
             }
             else

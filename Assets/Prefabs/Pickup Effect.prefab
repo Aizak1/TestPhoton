@@ -4887,6 +4887,8 @@ GameObject:
   - component: {fileID: 198441735510129736}
   - component: {fileID: 199410029444429792}
   - component: {fileID: 82546954363652520}
+  - component: {fileID: 8257752155454462582}
+  - component: {fileID: -1278659134235086672}
   m_Layer: 0
   m_Name: Pickup Effect
   m_TagString: Untagged
@@ -4919,7 +4921,7 @@ ParticleSystem:
   serializedVersion: 7
   lengthInSec: 0.1
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -9848,3 +9850,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8257752155454462582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761433749851248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 155943207, guid: 5b00bf8b25851d440940a40ec23344f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneGuid: 
+  _serializerGuid: 5ea5a179-3afa-4e02-a1ba-760205bdd65e
+  _prefabId: 10
+  _updateRate: 1
+  _autoFreezeProxyFrames: 0
+  _clientPredicted: 1
+  _allowInstantiateOnClient: 1
+  _persistThroughSceneLoads: 0
+  _sceneObjectDestroyOnDetach: 1
+  _sceneObjectAutoAttach: 1
+  _alwaysProxy: 0
+  _detachOnDisable: 1
+  _allowFirstReplicationWhenFrozen: 0
+  _autoRemoveChildEntities: 0
+  _entityBehaviourQueryOption: 0
+  _entityPriorityCalculatorQueryOption: 1
+  _entityReplicationFilterQueryOption: 1
+--- !u!114 &-1278659134235086672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761433749851248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537ac14d961d7446ba095e1f43f7d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 1.5
