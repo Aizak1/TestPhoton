@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +19,7 @@ public class WaveSpawner : MonoBehaviour {
     [SerializeField] private Transform bossSpawnPoint;
     [SerializeField] private SceneTransition _sceneTransition;
     [SerializeField] private Slider _healthBar;
+    [SerializeField] private Player _player;
 
     private Wave _currentWave;
     private int _currentWaveIndex;
@@ -27,11 +27,6 @@ public class WaveSpawner : MonoBehaviour {
 
     private void Start()
     {
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            enabled = false;
-            return;
-        }
         StartCoroutine(CallNextWave(_currentWaveIndex));
     }
 
@@ -46,10 +41,10 @@ public class WaveSpawner : MonoBehaviour {
             }
             else
             {
-                //_enemiesOnWave = 1;
-                //var boss = Instantiate(_boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
-                //boss.Init(_healthBar, _sceneTransition, _player);
-                //_healthBar.gameObject.SetActive(true);
+                _enemiesOnWave = 1;
+                var boss = Instantiate(_boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
+                boss.Init(_healthBar, _sceneTransition, _player);
+                _healthBar.gameObject.SetActive(true);
             }
         }
     }
@@ -66,15 +61,15 @@ public class WaveSpawner : MonoBehaviour {
 
         for (int i = 0; i < _currentWave.count; i++)
         {
-            var randomPlayer = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
-            if (randomPlayer == null)
+
+            if (_player == null)
             {
                 yield break;
             }
             Enemy randomEnemy = _currentWave.enemies[Random.Range(0, _currentWave.enemies.Length)];
             Transform randomSpawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-            var enemy = PhotonNetwork.Instantiate(randomEnemy.name, randomSpawnPoint.position, transform.rotation);
-            enemy.GetComponent<Enemy>().Init(randomPlayer, DecreaseEnemyCountOnWave);
+            var enemy = Instantiate(randomEnemy, randomSpawnPoint.position, transform.rotation);
+            enemy.Init(_player, DecreaseEnemyCountOnWave);
 
             yield return new WaitForSeconds(_currentWave.timeBetweenSpawns);
 

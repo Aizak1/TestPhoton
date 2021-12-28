@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,32 +8,16 @@ public class Pickup : MonoBehaviour {
 
     public GameObject effect;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.GetComponent<Player>();
-        if (!player)
+        if (player)
         {
-            return;
+            Instantiate(effect, transform.position, Quaternion.identity);
+            player.ChangeWeapon(weaponToEquip);
+            Destroy(gameObject);
         }
-
-        PhotonNetwork.Instantiate(effect.name, transform.position, Quaternion.identity);
-
-        var playerView = player.gameObject.GetPhotonView();
-
-        if (playerView.IsMine)
-        {
-             player.ChangeWeapon(weaponToEquip);
-             int viewID = gameObject.GetPhotonView().ViewID;
-             player.gameObject.GetPhotonView().RPC("RPC_Destroy", gameObject.GetPhotonView().Owner,viewID);
-
-        }
-
-
-
     }
-
-
 
 
 }

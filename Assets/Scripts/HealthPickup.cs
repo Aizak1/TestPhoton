@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,22 +9,11 @@ public class HealthPickup : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.GetComponent<Player>();
-
-        if (!player)
+        if (player)
         {
-            return;
-        }
-
-        PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
-
-        var playerView = player.gameObject.GetPhotonView();
-
-        if (playerView.IsMine)
-        {
-            playerView.RPC("RPC_Heal", playerView.Owner, playerView.ViewID, _healAmount);
-            var pickUpView = gameObject.GetPhotonView();
-            int viewID = pickUpView.ViewID;
-            player.gameObject.GetPhotonView().RPC("RPC_Destroy", pickUpView.Owner, viewID);
+            Instantiate(_effect, transform.position, Quaternion.identity);
+            player.Heal(_healAmount);
+            Destroy(gameObject);
         }
     }
 

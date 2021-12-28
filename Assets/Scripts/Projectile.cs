@@ -1,5 +1,4 @@
-﻿using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,11 +38,8 @@ public class Projectile : MonoBehaviour {
     }
 
     void DestroyProjectile() {
-        if (gameObject.GetPhotonView().IsMine)
-        {
-            PhotonNetwork.Instantiate(explosion.name, transform.position, Quaternion.identity);
-            PhotonNetwork.Destroy(gameObject);
-        }
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
