@@ -41,12 +41,14 @@ public class Player : EntityBehaviour<ICustomPlayer>
         _currentWeapon = GetComponentInChildren<Weapon>();
 
         state.SetTransforms(state.PlayerTransform, transform);
+        state.SetAnimator(anim);
     }
 
     public override void SimulateOwner()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        var moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveAmount = moveInput.normalized * speed;
+
         if (moveInput != Vector2.zero)
         {
 
@@ -59,15 +61,15 @@ public class Player : EntityBehaviour<ICustomPlayer>
             {
                 timeBtwTrail -= Time.deltaTime;
             }
-            anim.SetBool("isRunning", true);
+            state.Animator.SetBool("isRunning", true);
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            state.Animator.SetBool("isRunning", false);
         }
-
         rb.MovePosition(rb.position + moveAmount * BoltNetwork.FrameDeltaTime);
     }
+
 
     public void TakeDamage(int amount)
     {

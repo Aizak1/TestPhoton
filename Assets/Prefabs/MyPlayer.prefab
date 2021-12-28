@@ -653,15 +653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   health: 5
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 21300000, guid: c8a59c02544e5d0478167e0cfb37b012, type: 3}
-  emptyHeart: {fileID: 21300002, guid: c8a59c02544e5d0478167e0cfb37b012, type: 3}
-  hurtAnim: {fileID: 0}
   hurtSound: {fileID: 1816404287344194, guid: d5e024d9e6c3f584b98ca09a9dc862aa, type: 3}
   trail: {fileID: 1484532861450366, guid: 9ab6612fa7ad721438c3b29e76007ff1, type: 3}
   startTimeBtwTrail: 0.05
