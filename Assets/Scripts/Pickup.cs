@@ -20,7 +20,7 @@ public class Pickup : EntityEventListener<IPickup> {
         BoltNetwork.Instantiate(effect, transform.position, Quaternion.identity);
         if (player.GetComponent<BoltEntity>().IsOwner)
         {
-            //player.ChangeWeapon(weaponToEquip);
+            player.ChangeWeapon(weaponToEquip);
         }
 
         if (gameObject.GetComponent<BoltEntity>().IsOwner)

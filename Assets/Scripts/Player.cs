@@ -82,7 +82,7 @@ public class Player : EntityEventListener<ICustomPlayer>
         Instantiate(hurtSound, transform.position, Quaternion.identity);
         health -= amount;
         UpdateHealthUI(health);
-        //hurtAnim.SetTrigger("hurt");
+        hurtAnim.SetTrigger("hurt");
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -91,21 +91,39 @@ public class Player : EntityEventListener<ICustomPlayer>
     }
 
     public void ChangeWeapon(Weapon weaponToEquip) {
-        Destroy(_currentWeapon.gameObject);
-        _currentWeapon = Instantiate(weaponToEquip, transform.position, transform.rotation, transform);
+        if(_currentWeapon != null)
+        {
+            BoltNetwork.Destroy(_currentWeapon.gameObject);
+        }
+        var pos = transform.position;
+        var rot = transform.rotation;
+
+        var weaponObject = BoltNetwork.Instantiate(weaponToEquip.gameObject, pos, rot);
+        var pickEvent = WeaponPickUpEvent.Create(entity);
+        pickEvent.WeaponEntity = weaponObject.GetComponent<BoltEntity>();
+        pickEvent.Send();
+    }
+
+    public override void OnEvent(WeaponPickUpEvent evnt)
+    {
+        var weapon = evnt.WeaponEntity.GetComponent<Weapon>();
+        weapon.Init(transform);
+        _currentWeapon = weapon;
     }
 
     void UpdateHealthUI(int currentHealth) {
 
-        //for (int i = 0; i < hearts.Length; i++)
-        //{
-        //    if (i < currentHealth)
-        //    {
-        //        hearts[i].sprite = fullHeart;
-        //    } else {
-        //        hearts[i].sprite = emptyHeart;
-        //    }
-        //}
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < currentHealth)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+        }
     }
 
     public void Heal(int healAmount) {

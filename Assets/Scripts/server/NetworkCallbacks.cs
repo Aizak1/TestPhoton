@@ -35,10 +35,7 @@ public class NetworkCallbacks : GlobalEventListener
         _cameraFollow.enabled = true;
         playerObject.GetComponent<Player>().Init(_healthImages, _heartAnimator, _sceneTransition);
 
-        var weapon = BoltNetwork.Instantiate(_startWeapon.gameObject, playerObject.transform.position, Quaternion.identity);
-        weapon.GetComponent<Weapon>().Init(playerObject.transform);
-
-        BoltNetwork.Instantiate(defaultPickUp.gameObject, new Vector2(Random.Range(_minX, _maxX), Random.Range(_minY, _maxY)), Quaternion.identity);
+        BoltNetwork.Instantiate(defaultPickUp.gameObject, new Vector2(x, y), Quaternion.identity);
     }
 
 }
