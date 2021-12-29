@@ -22,6 +22,8 @@ public class NetworkCallbacks : GlobalEventListener
 
     [SerializeField] Pickup defaultPickUp;
 
+    public static List<Player> ConnectedPlayers = new List<Player>();
+    public int PlayersCount;
 
     public override void SceneLoadLocalDone(string scene, IProtocolToken token)
     {
@@ -29,11 +31,29 @@ public class NetworkCallbacks : GlobalEventListener
         float y = Random.Range(_minY, _maxY);
 
         var playerObject = BoltNetwork.Instantiate(_player.gameObject, new Vector2(x, y), Quaternion.identity);
+        var player = playerObject.GetComponent<Player>();
+
         _cameraFollow.target = playerObject.transform;
         _cameraFollow.enabled = true;
-        playerObject.GetComponent<Player>().Init(_healthImages, _heartAnimator, _sceneTransition);
 
+        player.Init(_healthImages, _heartAnimator, _sceneTransition);
         BoltNetwork.Instantiate(defaultPickUp.gameObject, new Vector2(x, y), Quaternion.identity);
+    }
+
+    private void Update()
+    {
+        PlayersCount = ConnectedPlayers.Count;
+    }
+
+    public override void BoltShutdownBegin(AddCallback registerDoneCallback, UdpConnectionDisconnectReason disconnectReason)
+    {
+        ConnectedPlayers = new List<Player>();
+        _sceneTransition.LoadScene("Lobby");
+    }
+
+    public override void OnEvent(PlayerJoinedEvent evnt)
+    {
+        ConnectedPlayers.Add(evnt.PlayerEntity.GetComponent<Player>());
     }
 
 }

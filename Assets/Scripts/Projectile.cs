@@ -17,18 +17,16 @@ public class Projectile : EntityBehaviour<IProjectile> {
     private float timeBtwTrail;
     public float startTimeBtwTrail;
 
+
     public override void Attached()
     {
-        if (GetComponent<BoltEntity>().IsOwner)
+        if (entity.IsOwner)
         {
             Invoke("DestroyProjectile", lifeTime);
             BoltNetwork.Instantiate(soundObject, transform.position, transform.rotation);
             BoltNetwork.Instantiate(explosion, transform.position, Quaternion.identity);
         }
-    }
 
-    public override void SimulateOwner()
-    {
     }
 
     private void Update()
@@ -45,8 +43,17 @@ public class Projectile : EntityBehaviour<IProjectile> {
     }
 
     private void DestroyProjectile() {
-        BoltNetwork.Instantiate(explosion, transform.position, Quaternion.identity);
-        BoltNetwork.Destroy(gameObject);
+
+        if (!entity.IsAttached)
+        {
+            return;
+        }
+
+        if (entity.IsOwner)
+        {
+            BoltNetwork.Instantiate(explosion, transform.position, Quaternion.identity);
+            BoltNetwork.Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

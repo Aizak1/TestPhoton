@@ -1,0 +1,1088 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.7f1 (dd97f2c94397) revision 14522354'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.1415; Version 2009; 64bit' Language: 'ru' Physical Memory: 16252 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Innowise/TestPhoton
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+61276
+Successfully changed project path to: C:/Innowise/TestPhoton
+C:/Innowise/TestPhoton
+Using Asset Import Pipeline V2.
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 50.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.7f1 (dd97f2c94397)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Innowise/TestPhoton/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
+    Vendor:   
+    VRAM:     3962 MB
+    Driver:   27.21.14.6611
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001401 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 40.13 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.150 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006544 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D374427020 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.952 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1982 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.3 MB.
+System memory in use after: 89.4 MB.
+
+Unloading 67 unused Assets to reduce memory usage. Loaded Objects now: 2418.
+Total: 4.833800 ms (FindLiveObjects: 0.265300 ms CreateObjectMapping: 0.096000 ms MarkObjects: 4.380000 ms  DeleteObjects: 0.091500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/HurtSound 1.prefab
+  artifactKey: Guid(d5e024d9e6c3f584b98ca09a9dc862aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HurtSound 1.prefab using Guid(d5e024d9e6c3f584b98ca09a9dc862aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef563a4851c7a5cd572d591393e01550') in 0.038283 seconds
+  Import took 0.041796 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.029558 seconds.
+  path: Assets/Prefabs/MeleeEnemy.prefab
+  artifactKey: Guid(82b1649d54f1b5d4fbadf8202a680d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/MeleeEnemy.prefab using Guid(82b1649d54f1b5d4fbadf8202a680d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46ad6251238f1389e95ba90d48487ed') in 0.119905 seconds
+  Import took 0.132103 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Prefabs/MyPlayer.prefab
+  artifactKey: Guid(62dc373e6af39844bbcf5ec1b4b4e279) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/MyPlayer.prefab using Guid(62dc373e6af39844bbcf5ec1b4b4e279) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47f20e651ce41810f430c165f78e2d3b') in 0.032273 seconds
+  Import took 0.037176 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006280 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D374056020 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.961 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2428.
+Total: 6.595600 ms (FindLiveObjects: 1.109600 ms CreateObjectMapping: 0.186100 ms MarkObjects: 5.268800 ms  DeleteObjects: 0.029100 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006104 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D374205010 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.894 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2431.
+Total: 5.654600 ms (FindLiveObjects: 0.318600 ms CreateObjectMapping: 0.104300 ms MarkObjects: 5.192500 ms  DeleteObjects: 0.037600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006658 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D377D57020 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.959 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.72 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2434.
+Total: 5.471200 ms (FindLiveObjects: 0.265000 ms CreateObjectMapping: 0.102100 ms MarkObjects: 5.033800 ms  DeleteObjects: 0.068900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.010584 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D377D57020 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.976 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2437.
+Total: 5.808400 ms (FindLiveObjects: 0.248900 ms CreateObjectMapping: 0.097700 ms MarkObjects: 5.424100 ms  DeleteObjects: 0.035900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.009122 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D373FC4050 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.925 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2440.
+Total: 4.771400 ms (FindLiveObjects: 0.191300 ms CreateObjectMapping: 0.083800 ms MarkObjects: 4.464600 ms  DeleteObjects: 0.030900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007041 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D379B32820 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.978 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2443.
+Total: 7.737000 ms (FindLiveObjects: 0.510200 ms CreateObjectMapping: 0.268700 ms MarkObjects: 6.908400 ms  DeleteObjects: 0.047600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 11.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.8 MB.
+System memory in use after: 51.9 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2443.
+Total: 5.401400 ms (FindLiveObjects: 0.316500 ms CreateObjectMapping: 0.105700 ms MarkObjects: 4.948300 ms  DeleteObjects: 0.028900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.008538 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D39D793A30 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.302 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.04 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.9 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2446.
+Total: 9.659200 ms (FindLiveObjects: 0.352200 ms CreateObjectMapping: 0.206200 ms MarkObjects: 9.046500 ms  DeleteObjects: 0.052700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007496 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37803E020 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.951 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2449.
+Total: 5.469000 ms (FindLiveObjects: 0.318200 ms CreateObjectMapping: 0.168200 ms MarkObjects: 4.913600 ms  DeleteObjects: 0.067900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.7 MB.
+System memory in use after: 51.8 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2449.
+Total: 6.903400 ms (FindLiveObjects: 0.467400 ms CreateObjectMapping: 0.356000 ms MarkObjects: 6.026000 ms  DeleteObjects: 0.052100 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.009095 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D39E6B3AA0 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.114 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2452.
+Total: 5.828500 ms (FindLiveObjects: 0.419400 ms CreateObjectMapping: 0.198600 ms MarkObjects: 5.166800 ms  DeleteObjects: 0.042300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006455 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D377AC0940 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.213 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2455.
+Total: 6.111200 ms (FindLiveObjects: 0.261600 ms CreateObjectMapping: 0.089800 ms MarkObjects: 5.672800 ms  DeleteObjects: 0.085400 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.7 MB.
+System memory in use after: 51.8 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2455.
+Total: 6.971100 ms (FindLiveObjects: 0.601300 ms CreateObjectMapping: 0.228800 ms MarkObjects: 6.090800 ms  DeleteObjects: 0.048500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006700 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D377F912B0 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.982 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2458.
+Total: 6.401500 ms (FindLiveObjects: 0.305000 ms CreateObjectMapping: 0.132400 ms MarkObjects: 5.928900 ms  DeleteObjects: 0.033500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.008180 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37837B520 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.878 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2461.
+Total: 4.851900 ms (FindLiveObjects: 0.201900 ms CreateObjectMapping: 0.080400 ms MarkObjects: 4.525800 ms  DeleteObjects: 0.042500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.7 MB.
+System memory in use after: 51.8 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2461.
+Total: 5.817200 ms (FindLiveObjects: 0.541300 ms CreateObjectMapping: 0.231100 ms MarkObjects: 4.955300 ms  DeleteObjects: 0.087700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.008989 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.402 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2464.
+Total: 8.560200 ms (FindLiveObjects: 0.314700 ms CreateObjectMapping: 0.133900 ms MarkObjects: 8.067200 ms  DeleteObjects: 0.042500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006711 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.201 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2467.
+Total: 10.252900 ms (FindLiveObjects: 0.236400 ms CreateObjectMapping: 0.090100 ms MarkObjects: 9.829800 ms  DeleteObjects: 0.093200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.7 MB.
+System memory in use after: 51.9 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2467.
+Total: 5.111400 ms (FindLiveObjects: 0.234600 ms CreateObjectMapping: 0.086600 ms MarkObjects: 4.747100 ms  DeleteObjects: 0.041900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.009353 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.119 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2470.
+Total: 7.078600 ms (FindLiveObjects: 0.256500 ms CreateObjectMapping: 0.081200 ms MarkObjects: 6.689900 ms  DeleteObjects: 0.048800 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.022749 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.898 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2473.
+Total: 5.747700 ms (FindLiveObjects: 0.318300 ms CreateObjectMapping: 0.087800 ms MarkObjects: 5.286900 ms  DeleteObjects: 0.053000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006293 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.930 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.94 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2476.
+Total: 5.669000 ms (FindLiveObjects: 0.447700 ms CreateObjectMapping: 0.210600 ms MarkObjects: 4.972000 ms  DeleteObjects: 0.036400 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 11.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.8 MB.
+System memory in use after: 51.9 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2476.
+Total: 5.237700 ms (FindLiveObjects: 0.438500 ms CreateObjectMapping: 0.173500 ms MarkObjects: 4.550900 ms  DeleteObjects: 0.072400 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.009286 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.137 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2479.
+Total: 5.772900 ms (FindLiveObjects: 0.378500 ms CreateObjectMapping: 0.175700 ms MarkObjects: 5.179200 ms  DeleteObjects: 0.037600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 9.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.8 MB.
+System memory in use after: 51.9 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2479.
+Total: 5.404200 ms (FindLiveObjects: 0.222300 ms CreateObjectMapping: 0.085700 ms MarkObjects: 5.008600 ms  DeleteObjects: 0.086700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.008938 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.975 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.1 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2482.
+Total: 4.762300 ms (FindLiveObjects: 0.532400 ms CreateObjectMapping: 0.091700 ms MarkObjects: 4.109600 ms  DeleteObjects: 0.026500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.010860 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.965 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 4.861800 ms (FindLiveObjects: 0.251100 ms CreateObjectMapping: 0.091900 ms MarkObjects: 4.483900 ms  DeleteObjects: 0.032900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006156 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.864 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.0 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2488.
+Total: 4.675200 ms (FindLiveObjects: 0.200300 ms CreateObjectMapping: 0.118600 ms MarkObjects: 4.327100 ms  DeleteObjects: 0.028200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.15 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.8 MB.
+System memory in use after: 51.9 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2488.
+Total: 5.690800 ms (FindLiveObjects: 0.359700 ms CreateObjectMapping: 0.162800 ms MarkObjects: 5.109000 ms  DeleteObjects: 0.058000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007297 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.135 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.92 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2491.
+Total: 6.414700 ms (FindLiveObjects: 0.311400 ms CreateObjectMapping: 0.103900 ms MarkObjects: 5.962700 ms  DeleteObjects: 0.034900 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006556 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.908 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2494.
+Total: 5.562700 ms (FindLiveObjects: 0.496300 ms CreateObjectMapping: 0.285700 ms MarkObjects: 4.735700 ms  DeleteObjects: 0.043600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006558 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.268 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2497.
+Total: 5.734300 ms (FindLiveObjects: 0.376000 ms CreateObjectMapping: 0.108300 ms MarkObjects: 5.197400 ms  DeleteObjects: 0.050500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.008592 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.950 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2500.
+Total: 5.421200 ms (FindLiveObjects: 0.381700 ms CreateObjectMapping: 0.089100 ms MarkObjects: 4.881400 ms  DeleteObjects: 0.067000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006303 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.917 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2503.
+Total: 4.433600 ms (FindLiveObjects: 0.217800 ms CreateObjectMapping: 0.085300 ms MarkObjects: 4.097700 ms  DeleteObjects: 0.031800 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.8 MB.
+System memory in use after: 51.9 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2503.
+Total: 4.988200 ms (FindLiveObjects: 0.246100 ms CreateObjectMapping: 0.086100 ms MarkObjects: 4.606500 ms  DeleteObjects: 0.048000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.007353 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.119 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.89 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2506.
+Total: 6.064000 ms (FindLiveObjects: 0.481900 ms CreateObjectMapping: 0.122500 ms MarkObjects: 5.422000 ms  DeleteObjects: 0.034100 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006760 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.902 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2509.
+Total: 5.084000 ms (FindLiveObjects: 0.385300 ms CreateObjectMapping: 0.199300 ms MarkObjects: 4.453000 ms  DeleteObjects: 0.044700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Refreshing native plugins compatible for Editor in 10.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 56 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 51.8 MB.
+System memory in use after: 52.0 MB.
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 2509.
+Total: 4.824200 ms (FindLiveObjects: 0.260700 ms CreateObjectMapping: 0.096400 ms MarkObjects: 4.438100 ms  DeleteObjects: 0.027000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: point already registered
+
+Default GameObject Tag: boss already registered
+
+Default GameObject BitMask: boss already registered
+
+Registering precompiled user dll's ...
+Registered in 0.008947 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D37A8ED030 doesn't match image C:\Innowise\TestPhoton\Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.220 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1942 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.1 MB.
+System memory in use after: 89.2 MB.
+
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2512.
+Total: 9.184900 ms (FindLiveObjects: 0.331300 ms CreateObjectMapping: 0.131100 ms MarkObjects: 8.678200 ms  DeleteObjects: 0.042700 ms)
+

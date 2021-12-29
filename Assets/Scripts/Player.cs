@@ -46,6 +46,15 @@ public class Player : EntityEventListener<ICustomPlayer>
 
         state.SetTransforms(state.PlayerTransform, transform);
         state.SetAnimator(anim);
+
+
+        if (BoltNetwork.IsServer)
+        {
+            var playerJoinedEvent = PlayerJoinedEvent.Create();
+            playerJoinedEvent.PlayerEntity = entity;
+            playerJoinedEvent.Send();
+        }
+
     }
 
     public override void SimulateOwner()
@@ -77,15 +86,22 @@ public class Player : EntityEventListener<ICustomPlayer>
 
     public void TakeDamage(int amount)
     {
-        Instantiate(hurtSound, transform.position, Quaternion.identity);
-        health -= amount;
-        UpdateHealthUI(health);
-        hurtAnim.SetTrigger("hurt");
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-            //sceneTransitions.LoadScene("Lose");
-        }
+        //Instantiate(hurtSound, transform.position, Quaternion.identity);
+
+        //health -= amount;
+        //UpdateHealthUI(health);
+        //hurtAnim.SetTrigger("hurt");
+
+        //if (health <= 0)
+        //{
+        //    if (BoltNetwork.IsServer)
+        //    {
+        //        NetworkCallbacks.ConnectedPlayers.Remove(this);
+        //    }
+        //    //sceneTransitions.LoadScene("Lobby");
+        //    BoltNetwork.Shutdown();
+        //}
+
     }
 
     public void ChangeWeapon(Weapon weaponToEquip) {
@@ -113,6 +129,7 @@ public class Player : EntityEventListener<ICustomPlayer>
     {
         Heal(evnt.HealAmount);
     }
+
 
     void UpdateHealthUI(int currentHealth) {
 

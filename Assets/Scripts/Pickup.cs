@@ -25,6 +25,7 @@ public class Pickup : EntityEventListener<IPickup> {
 
         if (gameObject.GetComponent<BoltEntity>().IsOwner)
         {
+
             BoltNetwork.Destroy(gameObject);
         }
 

@@ -4496,6 +4496,24 @@
             "MecanimMode": 1,
             "SnapMagnitude": 10.0
           }
+        },
+        {
+          "Name": "Health",
+          "Enabled": true,
+          "Expanded": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Photon.Bolt.Compiler.PropertyTypeInteger, bolt.compiler",
+            "MaxValue": 255
+          },
+          "AssetSettings": {
+            "$type": "Photon.Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "ExtrapolationErrorTolerance": 0.25,
+            "_ExtrapolationCorrectionFrames": 6,
+            "ExtrapolationMaxFrames": 9,
+            "SnapMagnitude": 10.0
+          }
         }
       ],
       "PacketMaxBits": 512,
@@ -5156,6 +5174,214 @@
       "GlobalSenders": 3,
       "Name": "HealthPickUpEvent",
       "Guid": "09fb4e3f-5bc7-4937-8f0e-b367756c0ece",
+      "Groups": [
+        "samples"
+      ]
+    },
+    {
+      "$type": "Photon.Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [
+        {
+          "Name": "Damage",
+          "Enabled": true,
+          "Expanded": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Photon.Bolt.Compiler.PropertyTypeInteger, bolt.compiler",
+            "MaxValue": 255
+          },
+          "AssetSettings": {
+            "$type": "Photon.Bolt.Compiler.PropertyEventSettings, bolt.compiler"
+          }
+        }
+      ],
+      "EntitySenders": 1,
+      "GlobalSenders": 3,
+      "Name": "PlayerTakeDamageEvent",
+      "Guid": "8d1a3e01-f451-4feb-90d0-c146e5f844ac",
+      "Groups": [
+        "samples"
+      ]
+    },
+    {
+      "$type": "Photon.Bolt.Compiler.StateDefinition, bolt.compiler",
+      "Properties": [
+        {
+          "Name": "EnemyTransform",
+          "Enabled": true,
+          "Expanded": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Photon.Bolt.Compiler.PropertyTypeTransform, bolt.compiler",
+            "PositionSelection": 14,
+            "RotationSelection": 14,
+            "PositionCompression": [
+              {
+                "MinValue": -1024,
+                "MaxValue": 1024,
+                "Accuracy": 0.01,
+                "Pack": 100.0,
+                "Read": 0.01,
+                "Shift": 1024.0,
+                "BitsRequired": 18
+              },
+              {
+                "MinValue": -1024,
+                "MaxValue": 1024,
+                "Accuracy": 0.01,
+                "Pack": 100.0,
+                "Read": 0.01,
+                "Shift": 1024.0,
+                "BitsRequired": 18
+              },
+              {
+                "MinValue": -1024,
+                "MaxValue": 1024,
+                "Accuracy": 0.01,
+                "Pack": 100.0,
+                "Read": 0.01,
+                "Shift": 1024.0,
+                "BitsRequired": 18
+              }
+            ],
+            "RotationCompression": [
+              {
+                "MaxValue": 360,
+                "Accuracy": 0.01,
+                "Pack": 100.0,
+                "Read": 0.01,
+                "BitsRequired": 16
+              },
+              {
+                "MaxValue": 360,
+                "Accuracy": 0.01,
+                "Pack": 100.0,
+                "Read": 0.01,
+                "BitsRequired": 16
+              },
+              {
+                "MaxValue": 360,
+                "Accuracy": 0.01,
+                "Pack": 100.0,
+                "Read": 0.01,
+                "BitsRequired": 16
+              }
+            ],
+            "RotationCompressionQuaternion": {
+              "MinValue": -1,
+              "MaxValue": 1,
+              "Accuracy": 0.01,
+              "Pack": 100.0,
+              "Read": 0.01,
+              "Shift": 1.0,
+              "BitsRequired": 8
+            }
+          },
+          "AssetSettings": {
+            "$type": "Photon.Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "ExtrapolationErrorTolerance": 0.25,
+            "_ExtrapolationCorrectionFrames": 6,
+            "ExtrapolationMaxFrames": 9,
+            "SnapMagnitude": 10.0
+          }
+        }
+      ],
+      "PacketMaxBits": 512,
+      "PacketMaxProperties": 16,
+      "InitialPositionCompression": {
+        "Compression": [
+          {
+            "MinValue": -1024,
+            "MaxValue": 1024,
+            "Accuracy": 0.01,
+            "Pack": 100.0,
+            "Read": 0.01,
+            "Shift": 1024.0,
+            "BitsRequired": 18
+          },
+          {
+            "MinValue": -1024,
+            "MaxValue": 1024,
+            "Accuracy": 0.01,
+            "Pack": 100.0,
+            "Read": 0.01,
+            "Shift": 1024.0,
+            "BitsRequired": 18
+          },
+          {
+            "MinValue": -1024,
+            "MaxValue": 1024,
+            "Accuracy": 0.01,
+            "Pack": 100.0,
+            "Read": 0.01,
+            "Shift": 1024.0,
+            "BitsRequired": 18
+          }
+        ]
+      },
+      "InitialRotationCompression": {
+        "EulerCompression": [
+          {
+            "MaxValue": 360,
+            "Accuracy": 1.0,
+            "Pack": 1.0,
+            "Read": 1.0,
+            "BitsRequired": 9
+          },
+          {
+            "MaxValue": 360,
+            "Accuracy": 1.0,
+            "Pack": 1.0,
+            "Read": 1.0,
+            "BitsRequired": 9
+          },
+          {
+            "MaxValue": 360,
+            "Accuracy": 1.0,
+            "Pack": 1.0,
+            "Read": 1.0,
+            "BitsRequired": 9
+          }
+        ],
+        "QuaternionCompression": {
+          "MinValue": -1,
+          "MaxValue": 1,
+          "Accuracy": 0.01,
+          "Pack": 100.0,
+          "Read": 0.01,
+          "Shift": 1.0,
+          "BitsRequired": 8
+        }
+      },
+      "Name": "Enemy",
+      "Guid": "56bbe274-b65a-4d14-893f-509875120cf7",
+      "Groups": [
+        "samples"
+      ]
+    },
+    {
+      "$type": "Photon.Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [
+        {
+          "Name": "PlayerEntity",
+          "Enabled": true,
+          "Expanded": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Photon.Bolt.Compiler.PropertyTypeEntity, bolt.compiler"
+          },
+          "AssetSettings": {
+            "$type": "Photon.Bolt.Compiler.PropertyEventSettings, bolt.compiler"
+          }
+        }
+      ],
+      "EntitySenders": 3,
+      "GlobalSenders": 1,
+      "Name": "PlayerJoinedEvent",
+      "Guid": "b9c013ab-d136-498f-9388-8cc2c8f814a1",
       "Groups": [
         "samples"
       ]

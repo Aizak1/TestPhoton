@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : EntityEventListener<IEnemy> {
 
     [SerializeField] private int _health;
 
@@ -28,27 +29,37 @@ public class Enemy : MonoBehaviour {
         _onDeath = onDeath;
     }
 
+    public override void Attached()
+    {
+        state.SetTransforms(state.EnemyTransform, transform);
+    }
+
     public void TakeDamage (int amount) {
         _health -= amount;
         if (_health <= 0)
         {
+            if (!BoltNetwork.IsServer)
+            {
+                return;
+            }
+
             _onDeath?.Invoke();
 
             int randomNumber = Random.Range(0, 101);
             if (randomNumber < _pickupChance)
             {
                 var randomPickup = _pickups[Random.Range(0, _pickups.Length)];
-                Instantiate(randomPickup, transform.position, transform.rotation);
+                BoltNetwork.Instantiate(randomPickup.gameObject, transform.position, transform.rotation);
             }
 
             int randHealth = Random.Range(0, 101);
             if (randHealth < _healthPickupChance)
             {
-                Instantiate(_healthPickup, transform.position, transform.rotation);
+                BoltNetwork.Instantiate(_healthPickup.gameObject, transform.position, transform.rotation);
             }
 
-            Instantiate(_deathEffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            BoltNetwork.Instantiate(_deathEffect, transform.position, Quaternion.identity);
+            BoltNetwork.Destroy(gameObject);
         }
     }
 }
