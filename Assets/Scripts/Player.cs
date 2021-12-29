@@ -44,8 +44,6 @@ public class Player : EntityEventListener<ICustomPlayer>
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        _currentWeapon = GetComponentInChildren<Weapon>();
-
         state.SetTransforms(state.PlayerTransform, transform);
         state.SetAnimator(anim);
     }

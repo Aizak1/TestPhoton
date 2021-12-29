@@ -20,8 +20,6 @@ public class NetworkCallbacks : GlobalEventListener
     [SerializeField] Animator _heartAnimator;
     [SerializeField] Image[] _healthImages;
 
-
-    [SerializeField] Weapon _startWeapon;
     [SerializeField] Pickup defaultPickUp;
 
 
