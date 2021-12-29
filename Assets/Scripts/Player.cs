@@ -86,21 +86,16 @@ public class Player : EntityEventListener<ICustomPlayer>
 
     public void TakeDamage(int amount)
     {
-        //Instantiate(hurtSound, transform.position, Quaternion.identity);
+        Instantiate(hurtSound, transform.position, Quaternion.identity);
 
-        //health -= amount;
-        //UpdateHealthUI(health);
-        //hurtAnim.SetTrigger("hurt");
+        health -= amount;
+        UpdateHealthUI(health);
+        hurtAnim.SetTrigger("hurt");
 
-        //if (health <= 0)
-        //{
-        //    if (BoltNetwork.IsServer)
-        //    {
-        //        NetworkCallbacks.ConnectedPlayers.Remove(this);
-        //    }
-        //    //sceneTransitions.LoadScene("Lobby");
-        //    BoltNetwork.Shutdown();
-        //}
+        if (health <= 0)
+        {
+            BoltNetwork.Shutdown();
+        }
 
     }
 
@@ -128,6 +123,15 @@ public class Player : EntityEventListener<ICustomPlayer>
     public override void OnEvent(HealthPickUpEvent evnt)
     {
         Heal(evnt.HealAmount);
+    }
+
+    public override void OnEvent(PlayerTakeDamageEvent evnt)
+    {
+        if (!entity.IsOwner)
+        {
+            return;
+        }
+        TakeDamage(evnt.Damage);
     }
 
 

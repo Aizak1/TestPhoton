@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +10,25 @@ public class MeleeEnemy : Enemy {
 
     private float _attackTime;
 
-    private void Update()
+    public override void SimulateOwner()
     {
         if (!_player)
         {
+            if (BoltNetwork.IsServer)
+            {
+                int countOfClients = 0;
+                foreach (var item in BoltNetwork.Clients)
+                {
+                    countOfClients++;
+                }
+                if(countOfClients == 0)
+                {
+                    _player = FindObjectOfType<Player>();
+                }
+            }
             return;
         }
+
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)
         {
             var pos = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
@@ -32,7 +46,17 @@ public class MeleeEnemy : Enemy {
 
     IEnumerator Attack() {
 
-        _player.TakeDamage(_damage);
+        var playerEntity = _player.GetComponent<BoltEntity>();
+        if (!playerEntity.IsOwner)
+        {
+            var playerTakeDamageEvent = PlayerTakeDamageEvent.Create(playerEntity);
+            playerTakeDamageEvent.Damage = _damage;
+            playerTakeDamageEvent.Send();
+        }
+        else
+        {
+            _player.TakeDamage(_damage);
+        }
 
         Vector2 originalPosition = transform.position;
         Vector2 targetPosition = _player.transform.position;

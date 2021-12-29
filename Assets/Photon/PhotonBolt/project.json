@@ -5196,7 +5196,6 @@
           }
         }
       ],
-      "EntitySenders": 1,
       "GlobalSenders": 3,
       "Name": "PlayerTakeDamageEvent",
       "Guid": "8d1a3e01-f451-4feb-90d0-c146e5f844ac",
@@ -5382,6 +5381,17 @@
       "GlobalSenders": 1,
       "Name": "PlayerJoinedEvent",
       "Guid": "b9c013ab-d136-498f-9388-8cc2c8f814a1",
+      "Groups": [
+        "samples"
+      ]
+    },
+    {
+      "$type": "Photon.Bolt.Compiler.EventDefinition, bolt.compiler",
+      "Properties": [],
+      "EntitySenders": 3,
+      "GlobalSenders": 1,
+      "Name": "PlayerDiedEvent",
+      "Guid": "11ffb108-18c9-4f22-8aed-739c15a156ad",
       "Groups": [
         "samples"
       ]
