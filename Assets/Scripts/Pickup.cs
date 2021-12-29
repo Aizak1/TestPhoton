@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Bolt;
 
-public class Pickup : MonoBehaviour {
+public class Pickup : EntityEventListener<IPickup> {
 
     public Weapon weaponToEquip;
 
@@ -11,12 +12,23 @@ public class Pickup : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.GetComponent<Player>();
-        if (player)
+        if (!player)
         {
-            Instantiate(effect, transform.position, Quaternion.identity);
-            player.ChangeWeapon(weaponToEquip);
-            Destroy(gameObject);
+            return;
         }
+
+        BoltNetwork.Instantiate(effect, transform.position, Quaternion.identity);
+        if (player.GetComponent<BoltEntity>().IsOwner)
+        {
+            //player.ChangeWeapon(weaponToEquip);
+        }
+
+        if (gameObject.GetComponent<BoltEntity>().IsOwner)
+        {
+            BoltNetwork.Destroy(gameObject);
+        }
+
+
     }
 
 

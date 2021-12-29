@@ -3617,7 +3617,17 @@ MonoBehaviour:
   _maxY: 44
   _player: {fileID: 4026306327931734473, guid: 62dc373e6af39844bbcf5ec1b4b4e279, type: 3}
   _cameraFollow: {fileID: 809913207}
+  _sceneTransition: {fileID: 1168947627}
+  _heartAnimator: {fileID: 1853182025}
+  _healthImages:
+  - {fileID: 852482040}
+  - {fileID: 1030900213}
+  - {fileID: 1558054063}
+  - {fileID: 148830573}
+  - {fileID: 1519872864}
   _startWeapon: {fileID: 114440743012387338, guid: 868250a161ec34cafa116a1f0c4d069f,
+    type: 3}
+  defaultPickUp: {fileID: 114091756548689398, guid: 786c59be893ce8146a9d9fa9d15b8df4,
     type: 3}
 --- !u!1 &1947882540
 GameObject:

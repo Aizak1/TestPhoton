@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Bolt;
 
-public class Player : EntityBehaviour<ICustomPlayer>
+public class Player : EntityEventListener<ICustomPlayer>
 {
     public float speed;
 
@@ -16,13 +16,13 @@ public class Player : EntityBehaviour<ICustomPlayer>
 
     public int health;
 
-    //public Image[] hearts;
-    //public Sprite fullHeart;
-    //public Sprite emptyHeart;
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
-    //public Animator hurtAnim;
+    public Animator hurtAnim;
 
-    //private SceneTransition sceneTransitions;
+    private SceneTransition sceneTransitions;
     public GameObject hurtSound;
 
     public GameObject trail;
@@ -32,11 +32,17 @@ public class Player : EntityBehaviour<ICustomPlayer>
 
     private Weapon _currentWeapon;
 
+    public void Init(Image[] hearts, Animator hurtAnim, SceneTransition sceneTransition)
+    {
+        this.hearts = hearts;
+        this.hurtAnim = hurtAnim;
+        this.sceneTransitions = sceneTransition;
+    }
+
     public override void Attached()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        //sceneTransitions = FindObjectOfType<SceneTransition>();
 
         _currentWeapon = GetComponentInChildren<Weapon>();
 
