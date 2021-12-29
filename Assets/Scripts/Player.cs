@@ -109,6 +109,11 @@ public class Player : EntityEventListener<ICustomPlayer>
         _currentWeapon = weapon;
     }
 
+    public override void OnEvent(HealthPickUpEvent evnt)
+    {
+        Heal(evnt.HealAmount);
+    }
+
     void UpdateHealthUI(int currentHealth) {
 
         for (int i = 0; i < hearts.Length; i++)

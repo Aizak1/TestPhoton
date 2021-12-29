@@ -3625,9 +3625,9 @@ MonoBehaviour:
   - {fileID: 1558054063}
   - {fileID: 148830573}
   - {fileID: 1519872864}
-  _startWeapon: {fileID: 114440743012387338, guid: 868250a161ec34cafa116a1f0c4d069f,
-    type: 3}
   defaultPickUp: {fileID: 114091756548689398, guid: 786c59be893ce8146a9d9fa9d15b8df4,
+    type: 3}
+  healthPickup: {fileID: 114629443817554316, guid: 99a308bc6d8d942edb43b020d4626e4e,
     type: 3}
 --- !u!1 &1947882540
 GameObject:
