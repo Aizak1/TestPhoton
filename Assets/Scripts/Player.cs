@@ -107,7 +107,7 @@ public class Player : EntityEventListener<ICustomPlayer>
     public override void OnEvent(WeaponPickUpEvent evnt)
     {
         var weapon = evnt.WeaponEntity.GetComponent<Weapon>();
-        weapon.Init(transform);
+        evnt.WeaponEntity.SetParent(entity);
         _currentWeapon = weapon;
     }
 

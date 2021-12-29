@@ -13,13 +13,6 @@ public class Weapon : EntityBehaviour<IWeapon> {
 
     Animator cameraAnim;
 
-    private Transform _target;
-
-    public void Init(Transform target)
-    {
-        _target = target;
-    }
-
     public override void Attached()
     {
         cameraAnim = Camera.main.GetComponent<Animator>();
@@ -28,8 +21,6 @@ public class Weapon : EntityBehaviour<IWeapon> {
 
     public override void SimulateOwner()
     {
-        transform.position = _target.position;
-
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
