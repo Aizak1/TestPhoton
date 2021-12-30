@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,11 @@ public class MeleeEnemy : Enemy {
     {
         if (!_player)
         {
-            _player = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
+            if (PhotonNetwork.IsMasterClient)
+            {
+                var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
+                _player = PlayersSpawner.PlayersInSession[randomIndex];
+            }
             return;
         }
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)

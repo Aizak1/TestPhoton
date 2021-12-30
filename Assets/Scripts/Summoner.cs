@@ -36,6 +36,11 @@ public class Summoner : Enemy {
     {
         if (!_player)
         {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
+                _player = PlayersSpawner.PlayersInSession[randomIndex];
+            }
             return;
         }
 
@@ -68,11 +73,13 @@ public class Summoner : Enemy {
 
 
     public void Summon() {
-        if (_player != null)
+
+        if (_player == null)
         {
-            var enemy = PhotonNetwork.Instantiate(_enemyToSummon.name, transform.position, transform.rotation);
-            enemy.GetComponent<Enemy>().Init(PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)], null);
+            return;
         }
+        var enemy = PhotonNetwork.Instantiate(_enemyToSummon.name, transform.position, transform.rotation);
+        enemy.GetComponent<Enemy>().Init(PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)], null);
     }
 
 

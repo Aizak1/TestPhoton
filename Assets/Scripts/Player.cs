@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
             if (timeBtwTrail <= 0)
             {
-                PhotonNetwork.Instantiate(trail.name, groundPos.position, Quaternion.identity);
+                Instantiate(trail, groundPos.position, Quaternion.identity);
                 timeBtwTrail = startTimeBtwTrail;
             }
             else

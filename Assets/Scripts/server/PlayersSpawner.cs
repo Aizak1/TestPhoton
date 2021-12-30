@@ -14,6 +14,8 @@ public class PlayersSpawner : MonoBehaviour
     [SerializeField] private GameObject hardWeapon;
     [SerializeField] private GameObject defaultWeapon;
 
+    [SerializeField] private WaveSpawner _waveSpawner;
+
     private const int MIN_X = -60;
     private const int MAX_X = 60;
     private const int MIN_Y = -42;
@@ -35,6 +37,12 @@ public class PlayersSpawner : MonoBehaviour
 
         _cameraFollow.target = playerObject.transform;
          PhotonNetwork.Instantiate(defaultWeapon.name, playerObject.transform.position,Quaternion.identity);
+        if (PhotonNetwork.IsMasterClient)
+        {
+             PhotonNetwork.InstantiateRoomObject(_waveSpawner.name, Vector2.zero, Quaternion.identity);
+
+        }
+
     }
 
     public void AddPlayerInSession(Player player)
