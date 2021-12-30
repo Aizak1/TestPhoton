@@ -73,7 +73,7 @@ public class WaveSpawner : MonoBehaviour {
             }
             Enemy randomEnemy = _currentWave.enemies[Random.Range(0, _currentWave.enemies.Length)];
             Transform randomSpawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-            var enemy = PhotonNetwork.Instantiate(randomEnemy.name, randomSpawnPoint.position, transform.rotation);
+            var enemy = PhotonNetwork.InstantiateRoomObject(randomEnemy.name, randomSpawnPoint.position, transform.rotation);
             enemy.GetComponent<Enemy>().Init(randomPlayer, DecreaseEnemyCountOnWave);
 
             yield return new WaitForSeconds(_currentWave.timeBetweenSpawns);

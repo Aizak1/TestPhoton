@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         _currentWeapon = GetComponentInChildren<Weapon>();
         if (_photonView.IsMine)
         {
-            _photonView.RPC(nameof(RPC_Add), RpcTarget.MasterClient, _photonView.ViewID);
+            _photonView.RPC(nameof(RPC_Add), RpcTarget.AllBuffered, _photonView.ViewID);
         }
     }
 
@@ -113,7 +113,9 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
         if (health <= 0)
         {
-            _photonView.RPC(nameof(RPC_GameOver), RpcTarget.All);
+            _photonView.RPC(nameof(RPC_Remove), RpcTarget.AllBuffered, _photonView.ViewID);
+            PhotonNetwork.LeaveRoom();
+            sceneTransitions.LoadScene("Lobby");
         }
     }
 
@@ -160,7 +162,7 @@ public class Player : MonoBehaviour
     {
         if (_photonView.IsMine)
         {
-            _photonView.RPC(nameof(RPC_Remove), RpcTarget.MasterClient, _photonView.ViewID);
+            _photonView.RPC(nameof(RPC_Remove), RpcTarget.AllBuffered, _photonView.ViewID);
             PhotonNetwork.SendAllOutgoingCommands();
         }
     }

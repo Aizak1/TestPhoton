@@ -13,6 +13,7 @@ public class MeleeEnemy : Enemy {
     {
         if (!_player)
         {
+            _player = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
             return;
         }
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)
