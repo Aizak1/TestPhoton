@@ -17,6 +17,11 @@ public class RangedEnemy : Enemy {
     {
         if (!_player)
         {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
+                _player = PlayersSpawner.PlayersInSession[randomIndex];
+            }
             return;
         }
 

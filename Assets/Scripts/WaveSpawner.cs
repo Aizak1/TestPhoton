@@ -17,7 +17,6 @@ public class WaveSpawner : MonoBehaviour {
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private float _timeBetweenWaves;
     [SerializeField] private Boss _boss;
-    [SerializeField] private Transform bossSpawnPoint;
     [SerializeField] private SceneTransition _sceneTransition;
     [SerializeField] private Slider _healthBar;
 
@@ -60,9 +59,11 @@ public class WaveSpawner : MonoBehaviour {
             }
             else
             {
-                //_enemiesOnWave = 1;
-                //var boss = Instantiate(_boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
-                //boss.Init(_healthBar, _sceneTransition, _player);
+                _enemiesOnWave = 1;
+                var boss = PhotonNetwork.InstantiateRoomObject(_boss.name, Vector2.zero ,Quaternion.identity);
+                var randomPlayer = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
+                boss.GetComponent<Boss>().Init(_healthBar, randomPlayer);
+                PhotonNetwork.Destroy(gameObject);
                 //_healthBar.gameObject.SetActive(true);
             }
         }

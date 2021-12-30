@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,18 +16,16 @@ public class Boss : MonoBehaviour {
     private Player _player;
     private int _halfHealth;
     private Slider _healthBar;
-    private SceneTransition _sceneTransitions;
 
     private const string STAGE_2_TRIGGER = "stage2";
     private const string WIN_SCENE = "Win";
 
-    public void Init(Slider healthBar, SceneTransition sceneTransition, Player player)
+    public void Init(Slider healthBar, Player player)
     {
-        _healthBar = healthBar;
-        _healthBar.maxValue = _health;
-        _healthBar.value = _health;
+        //_healthBar = healthBar;
+        //_healthBar.maxValue = _health;
+        //_healthBar.value = _health;
         _halfHealth = _health / 2;
-        _sceneTransitions = sceneTransition;
 
         _player = player;
     }
@@ -34,14 +33,16 @@ public class Boss : MonoBehaviour {
     public void TakeDamage(int amount)
     {
         _health -= amount;
-        _healthBar.value = _health;
+        //_healthBar.value = _health;
         if (_health <= 0)
         {
             Instantiate(_effect, transform.position, Quaternion.identity);
             Instantiate(_blood, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            _healthBar.gameObject.SetActive(false);
-            _sceneTransitions.LoadScene(WIN_SCENE);
+            //_healthBar.gameObject.SetActive(false);
+            var masterClient = PlayersSpawner.PlayersInSession[0];
+            masterClient.gameObject.GetPhotonView().RPC(nameof(Player.RPC_GameOver), RpcTarget.AllBuffered);
+            PhotonNetwork.Destroy(gameObject);
+
         }
 
         if (_health <= _halfHealth)
@@ -49,9 +50,14 @@ public class Boss : MonoBehaviour {
             _animator.SetTrigger(STAGE_2_TRIGGER);
         }
 
-        Enemy randomEnemy = _enemies[Random.Range(0, _enemies.Length)];
-        var enemy = Instantiate(randomEnemy, transform.position + new Vector3(_spawnOffset, _spawnOffset, 0), transform.rotation);
-        enemy.Init(_player, null);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Enemy randomEnemy = _enemies[Random.Range(0, _enemies.Length)];
+            var enemy = PhotonNetwork.InstantiateRoomObject(randomEnemy.name, transform.position + new Vector3(_spawnOffset, _spawnOffset, 0), transform.rotation);
+            var randomPlayer = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
+            enemy.GetComponent<Enemy>().Init(randomPlayer, null);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
