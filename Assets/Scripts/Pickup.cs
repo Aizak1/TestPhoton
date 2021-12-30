@@ -26,7 +26,7 @@ public class Pickup : MonoBehaviour {
         {
              player.ChangeWeapon(weaponToEquip);
              int viewID = gameObject.GetPhotonView().ViewID;
-             player.gameObject.GetPhotonView().RPC("RPC_Destroy", gameObject.GetPhotonView().Owner,viewID);
+             player.gameObject.GetPhotonView().RPC(nameof(Player.RPC_Destroy), gameObject.GetPhotonView().Owner,viewID);
 
         }
 

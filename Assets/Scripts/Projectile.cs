@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour {
 
     private void Start()
     {
-        Invoke("DestroyProjectile", lifeTime);
+        Invoke(nameof(DestroyProjectile), lifeTime);
         Instantiate(soundObject, transform.position, transform.rotation);
         Instantiate(explosion, transform.position, Quaternion.identity);
     }

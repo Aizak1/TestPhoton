@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         _currentWeapon = GetComponentInChildren<Weapon>();
         if (_photonView.IsMine)
         {
-            _photonView.RPC("RPC_Add", RpcTarget.MasterClient, _photonView.ViewID);
+            _photonView.RPC(nameof(RPC_Add), RpcTarget.MasterClient, _photonView.ViewID);
         }
     }
 
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
 
         if (!_photonView.IsMine)
         {
-            _photonView.RPC("TakeDamage", _photonView.Owner, amount);
+            _photonView.RPC(nameof(TakeDamage), _photonView.Owner, amount);
             return;
         }
 
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
         if (health <= 0)
         {
-            _photonView.RPC("RPC_GameOver", RpcTarget.All);
+            _photonView.RPC(nameof(RPC_GameOver), RpcTarget.All);
         }
     }
 
@@ -127,10 +127,10 @@ public class Player : MonoBehaviour
         {
             int oldviewID = _currentWeapon.gameObject.GetPhotonView().ViewID;
 
-            _photonView.RPC("RPC_UnlockParent", RpcTarget.All, oldviewID);
-            _photonView.RPC("RPC_Destroy", weaponView.Owner, oldviewID);
+            _photonView.RPC(nameof(RPC_UnlockParent), RpcTarget.All, oldviewID);
+            _photonView.RPC(nameof(RPC_Destroy), weaponView.Owner, oldviewID);
         }
-        _photonView.RPC("RPC_SetCurrentWeapon", RpcTarget.AllBuffered, _photonView.ViewID,viewID);
+        _photonView.RPC(nameof(RPC_SetCurrentWeapon), RpcTarget.AllBuffered, _photonView.ViewID,viewID);
     }
 
     void UpdateHealthUI(int currentHealth) {
@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
     {
         if (_photonView.IsMine)
         {
-            _photonView.RPC("RPC_Remove", RpcTarget.MasterClient, _photonView.ViewID);
+            _photonView.RPC(nameof(RPC_Remove), RpcTarget.MasterClient, _photonView.ViewID);
             PhotonNetwork.SendAllOutgoingCommands();
         }
     }

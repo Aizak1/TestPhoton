@@ -19,7 +19,7 @@ public class EnemyBullet : MonoBehaviour {
         }
         else
         {
-            Invoke("DestroyProjectile", lifeTime);
+            Invoke(nameof(DestroyProjectile), lifeTime);
         }
     }
 
