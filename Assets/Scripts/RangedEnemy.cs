@@ -15,14 +15,15 @@ public class RangedEnemy : Enemy {
 
     private void Update()
     {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+
         if (!_player)
         {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
-                _player = PlayersSpawner.PlayersInSession[randomIndex];
-            }
-            return;
+            var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
+            _player = PlayersSpawner.PlayersInSession[randomIndex];
         }
 
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)

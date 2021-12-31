@@ -100,6 +100,11 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void TakeDamage(int amount)
     {
+        if (PhotonNetwork.NetworkClientState == Photon.Realtime.ClientState.Leaving)
+        {
+            return;
+        }
+
         Instantiate(hurtSound, transform.position, Quaternion.identity);
 
         if (!_photonView.IsMine)
@@ -113,7 +118,7 @@ public class Player : MonoBehaviour
         UpdateHealthUI(health);
         if (health <= 0)
         {
-            _photonView.RPC(nameof(RPC_Remove), RpcTarget.AllBuffered, _photonView.ViewID);
+            _photonView.RPC(nameof(RPC_Remove), RpcTarget.OthersBuffered, _photonView.ViewID);
             PhotonNetwork.LeaveRoom();
             sceneTransitions.LoadScene("Lobby");
         }
@@ -162,7 +167,9 @@ public class Player : MonoBehaviour
     {
         if (_photonView.IsMine)
         {
-            _photonView.RPC(nameof(RPC_Remove), RpcTarget.AllBuffered, _photonView.ViewID);
+            _photonView.RPC(nameof(RPC_Remove), RpcTarget.OthersBuffered, _photonView.ViewID);
+            PhotonNetwork.SendAllOutgoingCommands();
+            PhotonNetwork.Destroy(gameObject);
             PhotonNetwork.SendAllOutgoingCommands();
         }
     }

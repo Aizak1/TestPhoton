@@ -12,15 +12,17 @@ public class MeleeEnemy : Enemy {
 
     private void Update()
     {
-        if (!_player)
+        if (!PhotonNetwork.IsMasterClient)
         {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
-                _player = PlayersSpawner.PlayersInSession[randomIndex];
-            }
             return;
         }
+
+        if (!_player)
+        {
+            var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
+            _player = PlayersSpawner.PlayersInSession[randomIndex];
+        }
+
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)
         {
             var pos = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);

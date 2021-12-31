@@ -16,6 +16,10 @@ public class CreateAndConnectToRooms : MonoBehaviourPunCallbacks
 
     public void JoinRoom()
     {
+        if (PhotonNetwork.NetworkClientState != Photon.Realtime.ClientState.JoinedLobby)
+        {
+            return;
+        }
         PhotonNetwork.JoinRoom(_joinInput.text);
     }
 
