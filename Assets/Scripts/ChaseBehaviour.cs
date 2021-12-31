@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,11 @@ public class ChaseBehaviour : StateMachineBehaviour {
 
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+
         if (player == null)
         {
             player = FindObjectOfType<Player>();
@@ -16,7 +22,10 @@ public class ChaseBehaviour : StateMachineBehaviour {
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
         if (player != null)
         {
             animator.transform.position = Vector2.MoveTowards(animator.transform.position, player.transform.position, speed * Time.deltaTime);
