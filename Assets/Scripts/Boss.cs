@@ -15,28 +15,53 @@ public class Boss : MonoBehaviour {
 
     private Player _player;
     private int _halfHealth;
+    private PhotonView _photonView;
+
+    public int Health => _health;
+    public int HalfHealth => _halfHealth;
 
     private const string STAGE_2_TRIGGER = "stage2";
     private const string WIN_SCENE = "Win";
 
-    public void Init(Player player)
+    private void Awake()
     {
         _halfHealth = _health / 2;
+        _photonView = gameObject.GetPhotonView();
+    }
 
+    public void Init(Player player)
+    {
         _player = player;
     }
 
+    [PunRPC]
     public void TakeDamage(int amount)
     {
+        if (PhotonNetwork.NetworkClientState == Photon.Realtime.ClientState.Leaving)
+        {
+            return;
+        }
+
+        if (!_photonView.IsMine)
+        {
+            _photonView.RPC(nameof(TakeDamage), _photonView.Owner, amount);
+            return;
+        }
+
         _health -= amount;
+        _photonView.RPC(nameof(RPC_UpdateHealth), RpcTarget.OthersBuffered, amount);
+
         if (_health <= 0)
         {
-            PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
-            PhotonNetwork.Instantiate(_blood.name, transform.position, Quaternion.identity);
-            var masterClient = PlayersSpawner.PlayersInSession[0];
-            masterClient.gameObject.GetPhotonView().RPC(nameof(Player.RPC_GameOver), RpcTarget.AllBuffered);
-            PhotonNetwork.Destroy(gameObject);
-
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate(_blood.name, transform.position, Quaternion.identity);
+                var masterClient = PlayersSpawner.PlayersInSession[0];
+                masterClient.gameObject.GetPhotonView().RPC(nameof(Player.RPC_GameOver), RpcTarget.AllBuffered);
+                PhotonNetwork.Destroy(gameObject);
+                return;
+            }
         }
 
         if (_health <= _halfHealth)
@@ -63,4 +88,9 @@ public class Boss : MonoBehaviour {
         }
     }
 
+    [PunRPC]
+    public void RPC_UpdateHealth(int damageAmount)
+    {
+        _health -= damageAmount;
+    }
 }

@@ -22,6 +22,12 @@ public class Enemy : MonoBehaviour {
 
     protected Player _player;
     private UnityAction _onDeath;
+    private PhotonView _photonView;
+
+    private void Awake()
+    {
+        _photonView = gameObject.GetPhotonView();
+    }
 
     public void Init(Player player, UnityAction onDeath)
     {
@@ -29,7 +35,19 @@ public class Enemy : MonoBehaviour {
         _onDeath = onDeath;
     }
 
+    [PunRPC]
     public void TakeDamage (int amount) {
+        if (PhotonNetwork.NetworkClientState == Photon.Realtime.ClientState.Leaving)
+        {
+            return;
+        }
+
+        if (!_photonView.IsMine)
+        {
+            _photonView.RPC(nameof(TakeDamage), _photonView.Owner, amount);
+            return;
+        }
+
         _health -= amount;
         if (_health <= 0)
         {

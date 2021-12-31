@@ -24,6 +24,11 @@ public class RangedEnemy : Enemy {
         {
             var randomIndex = Random.Range(0, PlayersSpawner.PlayersInSession.Count);
             _player = PlayersSpawner.PlayersInSession[randomIndex];
+
+            if (!_player)
+            {
+                return;
+            }
         }
 
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)

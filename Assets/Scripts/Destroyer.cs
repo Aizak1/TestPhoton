@@ -15,9 +15,12 @@ public class Destroyer : MonoBehaviour {
     private void DestroyGlobally()
     {
         var view = gameObject.GetPhotonView();
-        if (view && view.IsMine)
+        if (view)
         {
-            PhotonNetwork.Destroy(gameObject);
+            if (view.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
         else
         {

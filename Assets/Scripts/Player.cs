@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void TakeDamage(int amount)
     {
+        return;
         if (PhotonNetwork.NetworkClientState == Photon.Realtime.ClientState.Leaving)
         {
             return;

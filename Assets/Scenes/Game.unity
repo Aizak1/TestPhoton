@@ -167,8 +167,6 @@ MonoBehaviour:
     type: 3}
   _waveSpawner: {fileID: 4149134153692207312, guid: 2d84df7c24dd7e74cb86aa8a57f3ff71,
     type: 3}
-  _spawnPointsParent: {fileID: 7537553239712058521, guid: ed2dfe90104d25243afcbe92c9db081d,
-    type: 3}
 --- !u!4 &9872988
 Transform:
   m_ObjectHideFlags: 0
@@ -2655,6 +2653,7 @@ GameObject:
   - component: {fileID: 1867112977}
   - component: {fileID: 1867112976}
   - component: {fileID: 1867112975}
+  - component: {fileID: 1867112979}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2751,6 +2750,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1867112979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867112974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535d452d5c16e01419bdd87e41236f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthSlider: {fileID: 183223384}
+  _waveSpawner: {fileID: 0}
+  _boss: {fileID: 0}
 --- !u!4 &1878285790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4500962051092356, guid: f3f0b8fed07b4430f8eb299a7ec04687,

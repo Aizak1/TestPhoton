@@ -19,6 +19,11 @@ public class Projectile : MonoBehaviour {
 
     private void Start()
     {
+        if (!gameObject.GetPhotonView().IsMine)
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
+
         Invoke(nameof(DestroyProjectile), lifeTime);
         Instantiate(soundObject, transform.position, transform.rotation);
         Instantiate(explosion, transform.position, Quaternion.identity);
