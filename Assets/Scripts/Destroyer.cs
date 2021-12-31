@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Destroyer : MonoBehaviour {
 
@@ -8,7 +9,19 @@ public class Destroyer : MonoBehaviour {
 
     private void Start()
     {
-        Destroy(gameObject, lifeTime);
+        Invoke(nameof(DestroyGlobally), lifeTime);
     }
 
+    private void DestroyGlobally()
+    {
+        var view = gameObject.GetPhotonView();
+        if (view && view.IsMine)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 }

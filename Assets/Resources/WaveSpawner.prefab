@@ -98,7 +98,6 @@ MonoBehaviour:
   - {fileID: 0}
   _timeBetweenWaves: 3
   _boss: {fileID: 114288779317360116, guid: 5b78be53cbde4534e978cfdcee6ad098, type: 3}
-  bossSpawnPoint: {fileID: 0}
   _sceneTransition: {fileID: 0}
   _healthBar: {fileID: 0}
 --- !u!114 &4051457618440490983

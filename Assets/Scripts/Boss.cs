@@ -15,16 +15,12 @@ public class Boss : MonoBehaviour {
 
     private Player _player;
     private int _halfHealth;
-    private Slider _healthBar;
 
     private const string STAGE_2_TRIGGER = "stage2";
     private const string WIN_SCENE = "Win";
 
-    public void Init(Slider healthBar, Player player)
+    public void Init(Player player)
     {
-        //_healthBar = healthBar;
-        //_healthBar.maxValue = _health;
-        //_healthBar.value = _health;
         _halfHealth = _health / 2;
 
         _player = player;
@@ -33,12 +29,10 @@ public class Boss : MonoBehaviour {
     public void TakeDamage(int amount)
     {
         _health -= amount;
-        //_healthBar.value = _health;
         if (_health <= 0)
         {
-            Instantiate(_effect, transform.position, Quaternion.identity);
-            Instantiate(_blood, transform.position, Quaternion.identity);
-            //_healthBar.gameObject.SetActive(false);
+            PhotonNetwork.Instantiate(_effect.name, transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate(_blood.name, transform.position, Quaternion.identity);
             var masterClient = PlayersSpawner.PlayersInSession[0];
             masterClient.gameObject.GetPhotonView().RPC(nameof(Player.RPC_GameOver), RpcTarget.AllBuffered);
             PhotonNetwork.Destroy(gameObject);

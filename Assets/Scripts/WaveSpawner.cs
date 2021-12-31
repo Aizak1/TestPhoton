@@ -62,7 +62,7 @@ public class WaveSpawner : MonoBehaviour {
                 _enemiesOnWave = 1;
                 var boss = PhotonNetwork.InstantiateRoomObject(_boss.name, Vector2.zero ,Quaternion.identity);
                 var randomPlayer = PlayersSpawner.PlayersInSession[Random.Range(0, PlayersSpawner.PlayersInSession.Count)];
-                boss.GetComponent<Boss>().Init(_healthBar, randomPlayer);
+                boss.GetComponent<Boss>().Init(randomPlayer);
                 PhotonNetwork.Destroy(gameObject);
                 //_healthBar.gameObject.SetActive(true);
             }
