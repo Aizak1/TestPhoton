@@ -19,14 +19,15 @@ public class Projectile : MonoBehaviour {
 
     private void Start()
     {
+        Instantiate(soundObject, transform.position, transform.rotation);
         if (!gameObject.GetPhotonView().IsMine)
         {
             GetComponent<Collider2D>().enabled = false;
+            return;
         }
 
         Invoke(nameof(DestroyProjectile), lifeTime);
-        Instantiate(soundObject, transform.position, transform.rotation);
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(explosion.name, transform.position, Quaternion.identity);
     }
 
     private void Update()

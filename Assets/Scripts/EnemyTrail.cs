@@ -11,7 +11,7 @@ public class EnemyTrail : MonoBehaviour {
     private void Update()
     {
         if (_timeBtwSpawn <= 0) {
-            Instantiate(_trail, transform.position, Quaternion.identity);
+            //Instantiate(_trail, transform.position, Quaternion.identity);
             _timeBtwSpawn = _startTimeBtwSpawn;
         } else
         {

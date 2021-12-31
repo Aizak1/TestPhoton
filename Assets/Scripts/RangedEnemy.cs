@@ -46,6 +46,11 @@ public class RangedEnemy : Enemy {
 
     public void RangedAttack () {
 
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            return;
+        }
+
         if (_player != null)
         {
 
