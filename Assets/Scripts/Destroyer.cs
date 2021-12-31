@@ -19,7 +19,6 @@ public class Destroyer : MonoBehaviour {
         {
             if (view.IsMine)
             {
-                Debug.LogWarning("I was here");
                 PhotonNetwork.Destroy(gameObject);
             }
         }

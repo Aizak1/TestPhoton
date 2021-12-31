@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void TakeDamage(int amount)
     {
-        return;
+
         if (PhotonNetwork.NetworkClientState == Photon.Realtime.ClientState.Leaving)
         {
             return;
@@ -198,7 +198,12 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void RPC_SetCurrentWeapon(int playerViewId, int viewID)
     {
-        var gameObject = PhotonView.Find(viewID).gameObject;
+        var playerView = PhotonView.Find(viewID);
+        if (!playerView)
+        {
+            return;
+        }
+        var gameObject = playerView.gameObject;
         _currentWeapon = gameObject.GetComponent<Weapon>();
         var playerObject = PhotonView.Find(playerViewId).gameObject;
         _currentWeapon.transform.parent = playerObject.transform;
