@@ -7,8 +7,8 @@ public class BossHealthUI : MonoBehaviour
 {
     [SerializeField] private Slider _healthSlider;
 
-    public WaveSpawner _waveSpawner;
-    public Boss _boss;
+    private WaveSpawner _waveSpawner;
+    private Boss _boss;
 
     private bool _isFilled;
 
