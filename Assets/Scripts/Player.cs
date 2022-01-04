@@ -100,7 +100,6 @@ public class Player : MonoBehaviour
     [PunRPC]
     public void TakeDamage(int amount)
     {
-
         if (PhotonNetwork.NetworkClientState == Photon.Realtime.ClientState.Leaving)
         {
             return;
@@ -171,6 +170,7 @@ public class Player : MonoBehaviour
             _photonView.RPC(nameof(RPC_Remove), RpcTarget.OthersBuffered, _photonView.ViewID);
             PhotonNetwork.SendAllOutgoingCommands();
             PhotonNetwork.Destroy(gameObject);
+            PhotonNetwork.LeaveRoom();
             PhotonNetwork.SendAllOutgoingCommands();
         }
     }
