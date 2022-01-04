@@ -20,12 +20,16 @@ public class CreateAndConnectToRooms : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(_createInput.text);
+        RoomOptions roomOptions = new RoomOptions
+        {
+            MaxPlayers = 2
+        };
+        PhotonNetwork.CreateRoom(_createInput.text, roomOptions);
     }
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("Waiting");
     }
 
     public override void OnConnectedToMaster()

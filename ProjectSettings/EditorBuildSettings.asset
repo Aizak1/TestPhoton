@@ -15,12 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: cbc1b43c1c21fe946bafa0c5da1cf42d
   - enabled: 1
+    path: Assets/Scenes/Waiting.unity
+    guid: 5aaef2df38777f941b78db4fb5cf0d91
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Lose.unity
-    guid: 813f6bb41c3d34a0d84eb4c224b2c3fc
-  - enabled: 1
-    path: Assets/Scenes/Win.unity
-    guid: 0c5cd2c9df8f2436a8705952d1faba20
   m_configObjects: {}
