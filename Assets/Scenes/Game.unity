@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048d4f7b42f106c459e63237155f6f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefab: {fileID: 2037818372176858785, guid: 50bef2c4265d56e4c8ff06c37b907e9b,
-    type: 3}
+  _playerPrefabs:
+  - {fileID: 2037818372176858789, guid: 50bef2c4265d56e4c8ff06c37b907e9b, type: 3}
+  - {fileID: 2037818372176858789, guid: b82eb4c0d7a51b142876fe8ac32b4e2a, type: 3}
   _healthAnimator: {fileID: 1853182025}
   _healthImages:
   - {fileID: 852482040}
@@ -2763,8 +2764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthSlider: {fileID: 183223384}
-  _waveSpawner: {fileID: 0}
-  _boss: {fileID: 0}
 --- !u!4 &1878285790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4500962051092356, guid: f3f0b8fed07b4430f8eb299a7ec04687,

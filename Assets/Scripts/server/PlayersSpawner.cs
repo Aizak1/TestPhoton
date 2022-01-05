@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayersSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerPrefab;
+    [SerializeField] private Player[] _playerPrefabs;
     [SerializeField] private Animator _healthAnimator;
     [SerializeField] private Image[] _healthImages;
 
@@ -30,9 +30,17 @@ public class PlayersSpawner : MonoBehaviour
         PlayersInSession = new List<Player>();
         _randomPosition = new Vector2(Random.Range(MIN_X, MAX_X), Random.Range(MIN_Y, MAX_Y));
 
-        var playerObject = PhotonNetwork.Instantiate(_playerPrefab.name, _randomPosition, Quaternion.identity);
-        var player = playerObject.GetComponent<Player>();
+        GameObject playerObject;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            playerObject = PhotonNetwork.Instantiate(_playerPrefabs[0].name, _randomPosition, Quaternion.identity);
+        }
+        else
+        {
+            playerObject = PhotonNetwork.Instantiate(_playerPrefabs[1].name, _randomPosition, Quaternion.identity);
+        }
 
+        var player = playerObject.GetComponent<Player>();
         player.Init(_healthImages,_healthAnimator);
 
         _cameraFollow.target = playerObject.transform;
