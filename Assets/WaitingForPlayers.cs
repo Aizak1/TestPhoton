@@ -23,6 +23,7 @@ public class WaitingForPlayers : MonoBehaviour
 
         if (current == max)
         {
+            PhotonNetwork.CurrentRoom.IsVisible = false;
             SceneManager.LoadScene("Game");
         }
     }
