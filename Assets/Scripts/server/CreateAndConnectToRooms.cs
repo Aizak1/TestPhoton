@@ -29,7 +29,22 @@ public class CreateAndConnectToRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Waiting");
+        var properties = PhotonNetwork.CurrentRoom.CustomProperties;
+        var isParsed = properties.TryGetValue("STARTED", out object isStarted);
+        if (!isParsed)
+        {
+            PhotonNetwork.LoadLevel("Waiting");
+            return;
+        }
+
+        if ((bool)isStarted)
+        {
+            PhotonNetwork.LoadLevel("Game");
+        }
+        else
+        {
+            PhotonNetwork.LoadLevel("Waiting");
+        }
     }
 
     public override void OnConnectedToMaster()

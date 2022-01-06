@@ -9,6 +9,11 @@ public class WaitingForPlayers : MonoBehaviour
 {
     [SerializeField] private Text _playersCountText;
 
+    private void Start()
+    {
+        Debug.Log("Hello");
+    }
+
     private void Update()
     {
         if (PhotonNetwork.CurrentRoom == null)
@@ -23,7 +28,9 @@ public class WaitingForPlayers : MonoBehaviour
 
         if (current == max)
         {
-            PhotonNetwork.CurrentRoom.IsVisible = false;
+            ExitGames.Client.Photon.Hashtable hashtable = new ExitGames.Client.Photon.Hashtable();
+            hashtable.Add("STARTED", true);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(hashtable);
             SceneManager.LoadScene("Game");
         }
     }
