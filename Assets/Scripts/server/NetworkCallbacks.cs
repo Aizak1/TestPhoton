@@ -56,4 +56,8 @@ public class NetworkCallbacks : GlobalEventListener
         ConnectedPlayers.Add(evnt.PlayerEntity.GetComponent<Player>());
     }
 
+    public override void OnEvent(PlayerQuitEvent evnt)
+    {
+        BoltNetwork.Shutdown();
+    }
 }

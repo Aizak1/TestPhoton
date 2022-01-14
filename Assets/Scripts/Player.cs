@@ -88,7 +88,7 @@ public class Player : EntityEventListener<ICustomPlayer>
     {
         if (!entity.IsOwner)
         {
-            var playerTakeDamageEvent = PlayerTakeDamageEvent.Create(entity);
+            var playerTakeDamageEvent = PlayerTakeDamageEvent.Create(entity, EntityTargets.OnlyOwner);
             playerTakeDamageEvent.Damage = amount;
             playerTakeDamageEvent.Send();
             return;
@@ -102,7 +102,8 @@ public class Player : EntityEventListener<ICustomPlayer>
 
         if (health <= 0)
         {
-            BoltNetwork.Shutdown();
+            var playerQuitEvent = PlayerQuitEvent.Create();
+            playerQuitEvent.Send();
         }
 
     }
@@ -135,13 +136,8 @@ public class Player : EntityEventListener<ICustomPlayer>
 
     public override void OnEvent(PlayerTakeDamageEvent evnt)
     {
-        if (!entity.IsOwner)
-        {
-            return;
-        }
         TakeDamage(evnt.Damage);
     }
-
 
     void UpdateHealthUI(int currentHealth) {
 

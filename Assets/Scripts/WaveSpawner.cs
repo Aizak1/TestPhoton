@@ -47,10 +47,8 @@ public class WaveSpawner : MonoBehaviour {
             }
             else
             {
-                //_enemiesOnWave = 1;
-                //var boss = Instantiate(_boss, bossSpawnPoint.position, bossSpawnPoint.rotation);
-                //boss.Init(_healthBar, _sceneTransition, _player);
-                //_healthBar.gameObject.SetActive(true);
+                _enemiesOnWave = 1;
+                BoltNetwork.Instantiate(_boss.gameObject, bossSpawnPoint.position, bossSpawnPoint.rotation);
             }
         }
     }

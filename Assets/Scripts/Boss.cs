@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss : MonoBehaviour {
-    [SerializeField] private int _health;
+public class Boss : EntityEventListener<IBoss> {
+    [SerializeField] private int _startHealth;
     [SerializeField] private Enemy[] _enemies;
     [SerializeField] private float _spawnOffset;
     [SerializeField] private int _damage;
@@ -12,36 +13,67 @@ public class Boss : MonoBehaviour {
     [SerializeField] private GameObject _effect;
     [SerializeField] private Animator _animator;
 
-    private Player _player;
+    private int _health;
     private int _halfHealth;
     private Slider _healthBar;
-    private SceneTransition _sceneTransitions;
+
+    private BoltEntity _boltEntity;
 
     private const string STAGE_2_TRIGGER = "stage2";
-    private const string WIN_SCENE = "Win";
 
-    public void Init(Slider healthBar, SceneTransition sceneTransition, Player player)
+    public override void Attached()
     {
-        _healthBar = healthBar;
-        _healthBar.maxValue = _health;
-        _healthBar.value = _health;
-        _halfHealth = _health / 2;
-        _sceneTransitions = sceneTransition;
+        state.SetTransforms(state.BossTransform, transform);
+        state.SetAnimator(_animator);
 
-        _player = player;
+        _boltEntity = GetComponent<BoltEntity>();
+
+        _health = _startHealth;
+        _halfHealth = _startHealth / 2;
+
+        var bossHealthBar = FindObjectOfType<BossHealthBar>();
+        _healthBar = bossHealthBar.slider;
+        _healthBar.maxValue = _startHealth;
+        _healthBar.value = _health;
+
+        foreach (var item in bossHealthBar.healthBarUIElements)
+        {
+            item.SetActive(true);
+        }
+
+        if (!_boltEntity.IsOwner)
+        {
+            var getHealth = BossGetHealthEvent.Create(_boltEntity, EntityTargets.OnlyOwner);
+            getHealth.Send();
+        }
     }
 
     public void TakeDamage(int amount)
     {
+        if (!_boltEntity.IsOwner)
+        {
+            var takeDamage = BossTakeDamageEvent.Create(entity, EntityTargets.OnlyOwner);
+            takeDamage.Damage = amount;
+            takeDamage.Send();
+            return;
+        }
+
         _health -= amount;
         _healthBar.value = _health;
+
+        var setHealth = BossSetHealthEvent.Create(_boltEntity, EntityTargets.EveryoneExceptOwnerAndController);
+        setHealth.Health = _health;
+        setHealth.Send();
+
         if (_health <= 0)
         {
-            Instantiate(_effect, transform.position, Quaternion.identity);
-            Instantiate(_blood, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            BoltNetwork.Instantiate(_effect, transform.position, Quaternion.identity);
+            BoltNetwork.Instantiate(_blood, transform.position, Quaternion.identity);
+            BoltNetwork.Destroy(gameObject);
             _healthBar.gameObject.SetActive(false);
-            _sceneTransitions.LoadScene(WIN_SCENE);
+
+            var playerQuitEvent = PlayerQuitEvent.Create();
+            playerQuitEvent.Send();
         }
 
         if (_health <= _halfHealth)
@@ -50,8 +82,9 @@ public class Boss : MonoBehaviour {
         }
 
         Enemy randomEnemy = _enemies[Random.Range(0, _enemies.Length)];
-        var enemy = Instantiate(randomEnemy, transform.position + new Vector3(_spawnOffset, _spawnOffset, 0), transform.rotation);
-        enemy.Init(_player, null);
+        var enemy = BoltNetwork.Instantiate(randomEnemy.gameObject, transform.position + new Vector3(_spawnOffset, _spawnOffset, 0), transform.rotation);
+        int randomIndex = Random.Range(0, NetworkCallbacks.ConnectedPlayers.Count);
+        enemy.GetComponent<Enemy>().Init(NetworkCallbacks.ConnectedPlayers[randomIndex], null);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,4 +96,21 @@ public class Boss : MonoBehaviour {
         }
     }
 
+    public override void OnEvent(BossGetHealthEvent evnt)
+    {
+        var setHealth = BossSetHealthEvent.Create(_boltEntity, EntityTargets.EveryoneExceptOwnerAndController);
+        setHealth.Health = _health;
+        setHealth.Send();
+    }
+
+    public override void OnEvent(BossSetHealthEvent evnt)
+    {
+        _health = evnt.Health;
+        _healthBar.value = _health;
+    }
+
+    public override void OnEvent(BossTakeDamageEvent evnt)
+    {
+        TakeDamage(evnt.Damage);
+    }
 }

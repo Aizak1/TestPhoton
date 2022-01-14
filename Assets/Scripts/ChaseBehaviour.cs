@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,12 @@ public class ChaseBehaviour : StateMachineBehaviour {
     private Player player;
     public float speed;
 
-
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (!BoltNetwork.IsServer)
+        {
+            return;
+        }
+
         if (player == null)
         {
             player = FindObjectOfType<Player>();
@@ -16,6 +21,10 @@ public class ChaseBehaviour : StateMachineBehaviour {
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (!BoltNetwork.IsServer)
+        {
+            return;
+        }
 
         if (player != null)
         {

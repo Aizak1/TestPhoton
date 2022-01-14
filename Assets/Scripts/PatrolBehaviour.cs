@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +12,21 @@ public class PatrolBehaviour : StateMachineBehaviour {
     int randomPoint;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (!BoltNetwork.IsServer)
+        {
+            return;
+        }
+
         patrolPoints = GameObject.FindGameObjectsWithTag("point");
         randomPoint = Random.Range(0, patrolPoints.Length);
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        if (!BoltNetwork.IsServer)
+        {
+            return;
+        }
+
         animator.transform.position = Vector2.MoveTowards(animator.transform.position, patrolPoints[randomPoint].transform.position, speed * Time.deltaTime);
 
         if (Vector2.Distance(animator.transform.position, patrolPoints[randomPoint].transform.position) < 0.1f)
@@ -26,7 +37,7 @@ public class PatrolBehaviour : StateMachineBehaviour {
     }
 
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	
+
 	}
 
 }
