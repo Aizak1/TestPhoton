@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,18 +24,25 @@ public class Summoner : Enemy {
     private Vector2 _targetPosition;
     private float _summonTime;
 
-    public void Start()
+    public override void Attached()
     {
-        float randomX = Random.Range(_minX, _maxX);
-        float randomY = Random.Range(_minY, _maxY);
-        _targetPosition = new Vector2(randomX, randomY);
+        state.SetAnimator(_animator);
+        state.SetTransforms(state.EnemyTransform, transform);
+        if (entity.IsOwner)
+        {
+            float randomX = Random.Range(_minX, _maxX);
+            float randomY = Random.Range(_minY, _maxY);
+            _targetPosition = new Vector2(randomX, randomY);
+        }
+
     }
 
 
-    private void Update()
+    public override void SimulateOwner()
     {
         if (!_player)
         {
+            _player = FindObjectOfType<Player>();
             return;
         }
 
@@ -67,10 +75,17 @@ public class Summoner : Enemy {
 
 
     public void Summon() {
+
+        if (!BoltNetwork.IsServer)
+        {
+            return;
+        }
+
         if (_player != null)
         {
-            var enemy = Instantiate(_enemyToSummon, transform.position, transform.rotation);
-            enemy.Init(_player, null);
+            var enemy = BoltNetwork.Instantiate(_enemyToSummon.gameObject, transform.position, transform.rotation);
+            int randomIndex = Random.Range(0, NetworkCallbacks.ConnectedPlayers.Count);
+            enemy.GetComponent<Enemy>().Init(NetworkCallbacks.ConnectedPlayers[randomIndex], null);
         }
     }
 
