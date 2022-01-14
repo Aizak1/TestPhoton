@@ -19,6 +19,10 @@ public class EnemyBullet : EntityBehaviour<IProjectile> {
         {
             Invoke("DestroyProjectile", lifeTime);
         }
+        else
+        {
+            GetComponent<Collider2D>().enabled = false;
+        }
 
     }
 

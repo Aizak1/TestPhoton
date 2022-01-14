@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 45
   _damage: 1
-  lifeTime: 0.7
+  lifeTime: 1
   _effect: {fileID: 1354371608571034, guid: 5388910d10e236b45bf87b9cd57bfce5, type: 3}
 --- !u!114 &6925495294274091404
 MonoBehaviour:
