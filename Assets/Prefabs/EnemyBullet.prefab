@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212253866701457630}
   - component: {fileID: 61758172616350838}
   - component: {fileID: 114607123393658540}
+  - component: {fileID: 6925495294274091404}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -124,4 +125,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 45
   _damage: 1
+  lifeTime: 0.7
   _effect: {fileID: 1354371608571034, guid: 5388910d10e236b45bf87b9cd57bfce5, type: 3}
+--- !u!114 &6925495294274091404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879413690073600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 155943207, guid: 5b00bf8b25851d440940a40ec23344f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneGuid: 
+  _serializerGuid: 0c5f35fd-bfda-4dd8-9b72-e9ccd445a1f8
+  _prefabId: 1
+  _updateRate: 1
+  _autoFreezeProxyFrames: 0
+  _clientPredicted: 1
+  _allowInstantiateOnClient: 1
+  _persistThroughSceneLoads: 0
+  _sceneObjectDestroyOnDetach: 1
+  _sceneObjectAutoAttach: 1
+  _alwaysProxy: 0
+  _detachOnDisable: 1
+  _allowFirstReplicationWhenFrozen: 0
+  _autoRemoveChildEntities: 0
+  _entityBehaviourQueryOption: 0
+  _entityPriorityCalculatorQueryOption: 1
+  _entityReplicationFilterQueryOption: 1

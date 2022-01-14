@@ -67,18 +67,18 @@ public class Player : EntityEventListener<ICustomPlayer>
 
             if (timeBtwTrail <= 0)
             {
-                BoltNetwork.Instantiate(trail, groundPos.position, Quaternion.identity);
+                //BoltNetwork.Instantiate(trail, groundPos.position, Quaternion.identity);
                 timeBtwTrail = startTimeBtwTrail;
             }
             else
             {
                 timeBtwTrail -= Time.deltaTime;
             }
-            state.Animator.SetBool("isRunning", true);
+            anim.SetBool("isRunning", true);
         }
         else
         {
-            state.Animator.SetBool("isRunning", false);
+            anim.SetBool("isRunning", false);
         }
         rb.MovePosition(rb.position + moveAmount * BoltNetwork.FrameDeltaTime);
     }
@@ -86,6 +86,14 @@ public class Player : EntityEventListener<ICustomPlayer>
 
     public void TakeDamage(int amount)
     {
+        if (!entity.IsOwner)
+        {
+            var playerTakeDamageEvent = PlayerTakeDamageEvent.Create(entity);
+            playerTakeDamageEvent.Damage = amount;
+            playerTakeDamageEvent.Send();
+            return;
+        }
+
         Instantiate(hurtSound, transform.position, Quaternion.identity);
 
         health -= amount;

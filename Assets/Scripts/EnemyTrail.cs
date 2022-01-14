@@ -14,7 +14,7 @@ public class EnemyTrail : MonoBehaviour {
         if (_timeBtwSpawn <= 0) {
             if (BoltNetwork.IsServer)
             {
-                BoltNetwork.Instantiate(_trail, transform.position, Quaternion.identity);
+                //BoltNetwork.Instantiate(_trail, transform.position, Quaternion.identity);
             }
             _timeBtwSpawn = _startTimeBtwSpawn;
         } else

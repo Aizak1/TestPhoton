@@ -16,15 +16,7 @@ public class MeleeEnemy : Enemy {
         {
             if (BoltNetwork.IsServer)
             {
-                int countOfClients = 0;
-                foreach (var item in BoltNetwork.Clients)
-                {
-                    countOfClients++;
-                }
-                if(countOfClients == 0)
-                {
-                    _player = FindObjectOfType<Player>();
-                }
+                _player = FindObjectOfType<Player>();
             }
             return;
         }
@@ -34,6 +26,7 @@ public class MeleeEnemy : Enemy {
             var pos = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             transform.position = pos;
         }
+
         else
         {
             if (Time.time >= _attackTime)
@@ -46,17 +39,7 @@ public class MeleeEnemy : Enemy {
 
     IEnumerator Attack() {
 
-        var playerEntity = _player.GetComponent<BoltEntity>();
-        if (!playerEntity.IsOwner)
-        {
-            var playerTakeDamageEvent = PlayerTakeDamageEvent.Create(playerEntity);
-            playerTakeDamageEvent.Damage = _damage;
-            playerTakeDamageEvent.Send();
-        }
-        else
-        {
-            _player.TakeDamage(_damage);
-        }
+        _player.TakeDamage(_damage);
 
         Vector2 originalPosition = transform.position;
         Vector2 targetPosition = _player.transform.position;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,10 +13,17 @@ public class RangedEnemy : Enemy {
     private float _attackTime;
 
 
-    private void Update()
+    public override void Attached()
+    {
+        state.SetTransforms(state.EnemyTransform, transform);
+        state.SetAnimator(_animator);
+    }
+
+    public override void SimulateOwner()
     {
         if (!_player)
         {
+            _player = FindObjectOfType<Player>();
             return;
         }
 
@@ -34,6 +42,11 @@ public class RangedEnemy : Enemy {
 
     public void RangedAttack () {
 
+        if (!entity.IsOwner)
+        {
+            return;
+        }
+
         if (_player != null)
         {
 
@@ -42,8 +55,7 @@ public class RangedEnemy : Enemy {
             Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             _shotPoint.rotation = rotation;
 
-            var bullet = Instantiate(_enemyBullet, _shotPoint.position, _shotPoint.rotation);
-            bullet.Init(_player);
+            var bullet = BoltNetwork.Instantiate(_enemyBullet.gameObject, _shotPoint.position, _shotPoint.rotation);
         }
     }
 }

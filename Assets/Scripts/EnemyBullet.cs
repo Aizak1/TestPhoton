@@ -1,28 +1,44 @@
-﻿using System.Collections;
+﻿using Photon.Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour {
+public class EnemyBullet : EntityBehaviour<IProjectile> {
+
     [SerializeField] private float _speed;
     [SerializeField] private int _damage;
+    [SerializeField] private float lifeTime;
 
     [SerializeField] private GameObject _effect;
 
     private Vector2 _targetPosition;
 
-    public void Init(Player player)
+    public override void Attached()
     {
-        _targetPosition = player.transform.position;
+        if (entity.IsOwner)
+        {
+            Invoke("DestroyProjectile", lifeTime);
+        }
+
     }
 
     private void Update()
     {
-        if ((Vector2)transform.position == _targetPosition)
+        transform.Translate(Vector2.up * _speed * Time.deltaTime);
+    }
+
+    private void DestroyProjectile()
+    {
+
+        if (!entity.IsAttached)
         {
-            Instantiate(_effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        } else {
-            transform.position = Vector2.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+            return;
+        }
+
+        if (entity.IsOwner)
+        {
+            BoltNetwork.Instantiate(_effect, transform.position, Quaternion.identity);
+            BoltNetwork.Destroy(gameObject);
         }
     }
 
@@ -33,7 +49,7 @@ public class EnemyBullet : MonoBehaviour {
         if (player)
         {
             player.TakeDamage(_damage);
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 }
