@@ -14,16 +14,13 @@ public class MeleeEnemy : Enemy {
     {
         if (!_player)
         {
-            if (BoltNetwork.IsServer)
-            {
-                _player = FindObjectOfType<Player>();
-            }
+
             return;
         }
 
         if (Vector2.Distance(transform.position, _player.transform.position) > _stopDistance)
         {
-            var pos = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
+            var pos = Vector2.MoveTowards(transform.position, _player.transform.position, _speed * BoltNetwork.FrameDeltaTime);
             transform.position = pos;
         }
 
@@ -38,8 +35,10 @@ public class MeleeEnemy : Enemy {
     }
 
     IEnumerator Attack() {
-
-        _player.TakeDamage(_damage);
+        var playerEntity = _player.GetComponent<BoltEntity>();
+        var damageEvent = PlayerTakeDamageEvent.Create(playerEntity, EntityTargets.OnlyOwner);
+        damageEvent.Damage = _damage;
+        damageEvent.Send();
 
         Vector2 originalPosition = transform.position;
         Vector2 targetPosition = _player.transform.position;

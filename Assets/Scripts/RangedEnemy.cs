@@ -49,13 +49,12 @@ public class RangedEnemy : Enemy {
 
         if (_player != null)
         {
-
             Vector2 direction = _player.transform.position - _shotPoint.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             _shotPoint.rotation = rotation;
 
-            var bullet = BoltNetwork.Instantiate(_enemyBullet.gameObject, _shotPoint.position, _shotPoint.rotation);
+            BoltNetwork.Instantiate(_enemyBullet.gameObject, _shotPoint.position, _shotPoint.rotation);
         }
     }
 }

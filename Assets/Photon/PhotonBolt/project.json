@@ -5280,6 +5280,7 @@
           },
           "AssetSettings": {
             "$type": "Photon.Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "SmoothingAlgorithm": 1,
             "ExtrapolationErrorTolerance": 0.25,
             "_ExtrapolationCorrectionFrames": 6,
             "ExtrapolationMaxFrames": 9,
@@ -5431,7 +5432,6 @@
         }
       ],
       "EntitySenders": 3,
-      "GlobalSenders": 1,
       "Name": "PlayerJoinedEvent",
       "Guid": "b9c013ab-d136-498f-9388-8cc2c8f814a1",
       "Groups": [

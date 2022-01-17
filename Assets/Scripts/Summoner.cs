@@ -92,7 +92,10 @@ public class Summoner : Enemy {
 
     IEnumerator Attack()
     {
-        _player.TakeDamage(_damage);
+        var playerEntity = _player.GetComponent<BoltEntity>();
+        var damageEvent = PlayerTakeDamageEvent.Create(playerEntity, EntityTargets.OnlyOwner);
+        damageEvent.Damage = _damage;
+        damageEvent.Send();
 
         Vector2 originalPosition = transform.position;
         Vector2 targetPosition = _player.transform.position;

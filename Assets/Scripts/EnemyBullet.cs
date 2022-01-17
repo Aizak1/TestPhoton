@@ -11,8 +11,6 @@ public class EnemyBullet : EntityBehaviour<IProjectile> {
 
     [SerializeField] private GameObject _effect;
 
-    private Vector2 _targetPosition;
-
     public override void Attached()
     {
         if (entity.IsOwner)
@@ -33,7 +31,6 @@ public class EnemyBullet : EntityBehaviour<IProjectile> {
 
     private void DestroyProjectile()
     {
-
         if (!entity.IsAttached)
         {
             return;
@@ -52,7 +49,11 @@ public class EnemyBullet : EntityBehaviour<IProjectile> {
         var player = other.GetComponent<Player>();
         if (player)
         {
-            player.TakeDamage(_damage);
+            var playerEntity = player.GetComponent<BoltEntity>();
+            var damageEvent = PlayerTakeDamageEvent.Create(playerEntity, EntityTargets.OnlyOwner);
+            damageEvent.Damage = _damage;
+            damageEvent.Send();
+
             DestroyProjectile();
         }
     }

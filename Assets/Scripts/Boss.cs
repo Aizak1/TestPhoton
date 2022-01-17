@@ -43,6 +43,7 @@ public class Boss : EntityEventListener<IBoss> {
 
         if (!_boltEntity.IsOwner)
         {
+            GetComponent<Collider2D>().enabled = false;
             var getHealth = BossGetHealthEvent.Create(_boltEntity, EntityTargets.OnlyOwner);
             getHealth.Send();
         }
@@ -92,7 +93,10 @@ public class Boss : EntityEventListener<IBoss> {
         var player = collision.GetComponent<Player>();
         if (player)
         {
-            player.TakeDamage(_damage);
+            var playerEntity = player.GetComponent<BoltEntity>();
+            var damageEvent = PlayerTakeDamageEvent.Create(playerEntity, EntityTargets.OnlyOwner);
+            damageEvent.Damage = _damage;
+            damageEvent.Send();
         }
     }
 

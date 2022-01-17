@@ -11,7 +11,6 @@ public class Player : EntityEventListener<ICustomPlayer>
 
     private Rigidbody2D rb;
 
-    private Vector2 moveAmount;
     private Animator anim;
 
     public int health;
@@ -22,21 +21,17 @@ public class Player : EntityEventListener<ICustomPlayer>
 
     public Animator hurtAnim;
 
-    private SceneTransition sceneTransitions;
     public GameObject hurtSound;
 
     public GameObject trail;
-    private float timeBtwTrail;
-    public float startTimeBtwTrail;
     public Transform groundPos;
 
     private Weapon _currentWeapon;
 
-    public void Init(Image[] hearts, Animator hurtAnim, SceneTransition sceneTransition)
+    public void Init(Image[] hearts, Animator hurtAnim)
     {
         this.hearts = hearts;
         this.hurtAnim = hurtAnim;
-        this.sceneTransitions = sceneTransition;
     }
 
     public override void Attached()
@@ -47,65 +42,42 @@ public class Player : EntityEventListener<ICustomPlayer>
         state.SetTransforms(state.PlayerTransform, transform);
         state.SetAnimator(anim);
 
-
-        if (BoltNetwork.IsServer)
+        if (entity.IsOwner)
         {
+            state.Health = health;
+            state.AddCallback("Health", OnHealthChanged);
+
             var playerJoinedEvent = PlayerJoinedEvent.Create();
             playerJoinedEvent.PlayerEntity = entity;
             playerJoinedEvent.Send();
         }
-
     }
 
     public override void SimulateOwner()
     {
         var moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        moveAmount = moveInput.normalized * speed;
 
-        if (moveInput != Vector2.zero)
-        {
+        anim.SetBool("isRunning", moveInput != Vector2.zero);
 
-            if (timeBtwTrail <= 0)
-            {
-                //BoltNetwork.Instantiate(trail, groundPos.position, Quaternion.identity);
-                timeBtwTrail = startTimeBtwTrail;
-            }
-            else
-            {
-                timeBtwTrail -= Time.deltaTime;
-            }
-            anim.SetBool("isRunning", true);
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
-        rb.MovePosition(rb.position + moveAmount * BoltNetwork.FrameDeltaTime);
+        rb.MovePosition(rb.position + BoltNetwork.FrameDeltaTime * speed * moveInput.normalized);
     }
-
 
     public void TakeDamage(int amount)
     {
-        if (!entity.IsOwner)
-        {
-            var playerTakeDamageEvent = PlayerTakeDamageEvent.Create(entity, EntityTargets.OnlyOwner);
-            playerTakeDamageEvent.Damage = amount;
-            playerTakeDamageEvent.Send();
-            return;
-        }
-
+        state.Health -= amount;
         Instantiate(hurtSound, transform.position, Quaternion.identity);
-
-        health -= amount;
-        UpdateHealthUI(health);
         hurtAnim.SetTrigger("hurt");
+    }
 
-        if (health <= 0)
+    public void OnHealthChanged()
+    {
+        UpdateHealthUI(state.Health);
+
+        if (state.Health <= 0)
         {
             var playerQuitEvent = PlayerQuitEvent.Create();
             playerQuitEvent.Send();
         }
-
     }
 
     public void ChangeWeapon(Weapon weaponToEquip) {
@@ -155,12 +127,11 @@ public class Player : EntityEventListener<ICustomPlayer>
     }
 
     public void Heal(int healAmount) {
-        if (health + healAmount > 5)
+        if (state.Health + healAmount > 5)
         {
-            health = 5;
+            state.Health = 5;
         } else {
-            health += healAmount;
+            state.Health += healAmount;
         }
-        UpdateHealthUI(health);
     }
 }

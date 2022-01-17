@@ -36,7 +36,7 @@ public class NetworkCallbacks : GlobalEventListener
         _cameraFollow.target = playerObject.transform;
         _cameraFollow.enabled = true;
 
-        player.Init(_healthImages, _heartAnimator, _sceneTransition);
+        player.Init(_healthImages, _heartAnimator);
         BoltNetwork.Instantiate(defaultPickUp.gameObject, new Vector2(x, y), Quaternion.identity);
     }
 
