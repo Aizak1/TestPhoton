@@ -25,7 +25,7 @@ public class NetworkCallbacks : GlobalEventListener
     public static List<Player> ConnectedPlayers = new List<Player>();
     public int PlayersCount;
 
-    public override void SceneLoadLocalDone(string scene, IProtocolToken token)
+    private void Start()
     {
         float x = Random.Range(_minX, _maxX);
         float y = Random.Range(_minY, _maxY);
